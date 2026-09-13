@@ -1,0 +1,10 @@
+node_modules/
+build/
+.react-router/
+.wrangler/
+.env*
+.dev.vars*
+playwright-report/
+test-results/
+.scratch/
+.token
