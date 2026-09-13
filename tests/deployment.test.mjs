@@ -65,3 +65,10 @@ test("previews are tied to an open PR at the exact checked head, including forks
     null,
   );
 });
+
+test("publishing configuration is strict JSON", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const config = JSON.parse(await readFile("wrangler.jsonc", "utf8"));
+  assert.equal(config.name, "stoicprayers");
+  assert.equal(config.assets.not_found_handling, "404-page");
+});
