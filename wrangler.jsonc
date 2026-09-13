@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "stoicprayers",
+  "account_id": "daabd388c9779fd8ffa3ad1b29960394",
+  "compatibility_date": "2026-09-13",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./build/client",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+}

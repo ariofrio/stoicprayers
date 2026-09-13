@@ -1,0 +1,156 @@
+[
+  {
+    "id": "cleanthes-hymn-to-zeus",
+    "author": "Cleanthes",
+    "title": "Hymn to Zeus",
+    "category": "Prayers and hymns",
+    "reference": "Hymn to Zeus, lines 1–39"
+  },
+  {
+    "id": "cleanthes-prayer-to-zeus-and-destiny",
+    "author": "Cleanthes",
+    "title": "Prayer to Zeus and Destiny",
+    "category": "Prayers and hymns",
+    "reference": "Enchiridion 53.1; Letters 107.11"
+  },
+  {
+    "id": "epictetus-prayer-for-the-arrival-of-difficulties",
+    "author": "Epictetus",
+    "title": "Prayer for the arrival of difficulties",
+    "category": "Prayers and hymns",
+    "reference": "Discourses 1.6.37"
+  },
+  {
+    "id": "epictetus-hymn-of-gratitude-for-the-gifts-of-life",
+    "author": "Epictetus",
+    "title": "Hymn of gratitude for the gifts of life",
+    "category": "Prayers and hymns",
+    "reference": "Discourses 1.16.15–21"
+  },
+  {
+    "id": "epictetus-prayer-of-complete-surrender",
+    "author": "Epictetus",
+    "title": "Prayer of complete surrender",
+    "category": "Prayers and hymns",
+    "reference": "Discourses 2.16.42"
+  },
+  {
+    "id": "epictetus-prayer-of-self-examination-in-illness-and-death",
+    "author": "Epictetus",
+    "title": "Prayer of self-examination in illness and death",
+    "category": "Prayers and hymns",
+    "reference": "Discourses 3.5.7–10"
+  },
+  {
+    "id": "epictetus-prayer-concerning-remaining-alive-or-departing",
+    "author": "Epictetus",
+    "title": "Prayer concerning remaining alive or departing",
+    "category": "Prayers and hymns",
+    "reference": "Discourses 3.24.96–102"
+  },
+  {
+    "id": "epictetus-final-thanksgiving-and-return-of-life",
+    "author": "Epictetus",
+    "title": "Final thanksgiving and return of life",
+    "category": "Prayers and hymns",
+    "reference": "Discourses 4.10.14–16 (prayer excerpt)"
+  },
+  {
+    "id": "marcus-aurelius-three-prayers-of-inward-freedom",
+    "author": "Marcus Aurelius",
+    "title": "Three prayers of inward freedom",
+    "category": "Prayers and hymns",
+    "reference": "Meditations 9.40"
+  },
+  {
+    "id": "marcus-aurelius-address-to-the-universe",
+    "author": "Marcus Aurelius",
+    "title": "Address to the Universe",
+    "category": "Prayers and hymns",
+    "reference": "Meditations 4.23"
+  },
+  {
+    "id": "marcus-aurelius-i-love-as-thou-lovest",
+    "author": "Marcus Aurelius",
+    "title": "“I love as thou lovest”",
+    "category": "Prayers and hymns",
+    "reference": "Meditations 10.21"
+  },
+  {
+    "id": "marcus-aurelius-thanksgiving-for-his-life",
+    "author": "Marcus Aurelius",
+    "title": "Thanksgiving for his life",
+    "category": "Prayers and hymns",
+    "reference": "Meditations 1.17"
+  },
+  {
+    "id": "seneca-for-health-of-mind-and-body",
+    "author": "Seneca",
+    "title": "For health of mind and body",
+    "category": "Reflections on prayer",
+    "reference": "Letters 10.4 (excerpt)"
+  },
+  {
+    "id": "seneca-the-prayer-that-asks-no-favour",
+    "author": "Seneca",
+    "title": "A disinterested prayer",
+    "category": "Reflections on prayer",
+    "reference": "Letters 60.1 (closing sentence)"
+  },
+  {
+    "id": "seneca-for-an-honourable-life-and-the-virtue-to-endure",
+    "author": "Seneca",
+    "title": "For an honourable life and the virtue to endure",
+    "category": "Reflections on prayer",
+    "reference": "Letters 67.7"
+  },
+  {
+    "id": "seneca-for-life-and-health",
+    "author": "Seneca",
+    "title": "For life and health",
+    "category": "Reflections on prayer",
+    "reference": "Letters 117.24 (closing sentences)"
+  },
+  {
+    "id": "athenians-athenian-prayer-for-rain",
+    "author": "Athenians",
+    "title": "Athenian prayer for rain",
+    "category": "Related voices",
+    "reference": "Meditations 5.7"
+  },
+  {
+    "id": "demetrius-the-cynic-prayer-of-willing-surrender",
+    "author": "Demetrius the Cynic",
+    "title": "Prayer of willing surrender",
+    "category": "Related voices",
+    "reference": "On Providence 5.5"
+  },
+  {
+    "id": "aratus-of-soli-opening-hymn-and-prayer-in-the-phaenomena",
+    "author": "Aratus of Soli",
+    "title": "Opening hymn and prayer in the Phaenomena",
+    "category": "Related voices",
+    "reference": "Phaenomena 1–18"
+  },
+  {
+    "id": "persius-the-offering-appropriate-to-prayer",
+    "author": "Persius",
+    "title": "The offering appropriate to prayer",
+    "category": "Reflections on prayer",
+    "reference": "Satire 2.71–75"
+  },
+  {
+    "id": "euripides-acceptance-of-necessity",
+    "author": "Euripides",
+    "title": "Acceptance of necessity",
+    "category": "Related voices",
+    "reference": "Enchiridion 53.2, quoting Euripides"
+  },
+  {
+    "id": "socrates-acceptance-of-the-gods-will",
+    "author": "Socrates",
+    "title": "Acceptance of the gods’ will",
+    "category": "Related voices",
+    "reference": "Enchiridion 53.3–4, quoting Socrates"
+  }
+]

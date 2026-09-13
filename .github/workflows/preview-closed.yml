@@ -1,0 +1,20 @@
+name: Close preview
+on:
+  pull_request_target:
+    types: [closed]
+permissions:
+  deployments: write
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark preview deployments inactive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          gh api --paginate "repos/$REPO/deployments?environment=preview-pr-$PR_NUMBER&per_page=100" --jq '.[].id' |
+          while read -r id; do
+            gh api --method POST "repos/$REPO/deployments/$id/statuses" -f state=inactive -f description='Pull request closed' > /dev/null
+          done
