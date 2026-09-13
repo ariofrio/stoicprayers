@@ -75,6 +75,12 @@ export default function About() {
       </p>
       <h2>Reading across editions</h2>
       <p>
+        Use “Jump to” above each passage to reach the original, modern
+        rendering, historical translation, or source notes directly. These links
+        also work without JavaScript and make long passages easier to read on a
+        phone.
+      </p>
+      <p>
         Choose a historical translator from the selector above the English
         column. “Compare another” adds a second edition. “Continuous” stacks the
         texts for a longer reading session. Translations may include context
