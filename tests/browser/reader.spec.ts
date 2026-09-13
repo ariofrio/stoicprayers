@@ -109,3 +109,27 @@ test("reading works with JavaScript disabled", async ({ browser, baseURL }) => {
   await expect(page.locator(".passage-link")).toHaveCount(22);
   await context.close();
 });
+
+test("section links reach translations and notes without JavaScript", async ({
+  browser,
+  baseURL,
+}) => {
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    viewport: { width: 390, height: 844 },
+  });
+  const page = await context.newPage();
+  await page.goto(`${baseURL}/prayers/cleanthes-hymn-to-zeus`);
+  const navigation = page.getByRole("navigation", { name: "Passage sections" });
+  for (const [name, id] of [
+    ["Modern rendering", "modern"],
+    ["Historical translation", "historical"],
+    ["Sources & notes", "sources"],
+    ["Original text", "original"],
+  ]) {
+    await navigation.getByRole("link", { name, exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`#${id}$`));
+    await expect(page.locator(`#${id}`)).toBeInViewport();
+  }
+  await context.close();
+});
