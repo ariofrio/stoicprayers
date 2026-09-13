@@ -50,7 +50,11 @@ function Reader({ prayer }: { prayer: Prayer }) {
   function translationColumn(value: number, extra = false) {
     const e = prayer.editions[value];
     return (
-      <section className="text-column historical">
+      <section
+        id={extra ? "additional" : "historical"}
+        tabIndex={-1}
+        className="text-column historical"
+      >
         <header>
           <p className="eyebrow">Historical translation</p>
           <label
@@ -129,10 +133,18 @@ function Reader({ prayer }: { prayer: Prayer }) {
       <p className="copy-status" role="status">
         {copyMessage}
       </p>
+      <nav className="section-links" aria-label="Passage sections">
+        <span>Jump to</span>
+        <a href="#original">Original text</a>
+        <a href="#modern">Modern rendering</a>
+        <a href="#historical">Historical translation</a>
+        {second !== null && <a href="#additional">Additional translation</a>}
+        <a href="#sources">Sources &amp; notes</a>
+      </nav>
       <div
         className={`reading-grid${stacked ? " continuous" : ""}${second !== null ? " four-columns" : ""}`}
       >
-        <section className="text-column original">
+        <section id="original" tabIndex={-1} className="text-column original">
           <header>
             <p className="eyebrow">Original text</p>
             <h2>
@@ -155,7 +167,7 @@ function Reader({ prayer }: { prayer: Prayer }) {
             ))}
           </div>
         </section>
-        <section className="text-column literal">
+        <section id="modern" tabIndex={-1} className="text-column literal">
           <header>
             <p className="eyebrow">Modern rendering</p>
             <h2>Close to the words</h2>
@@ -170,7 +182,12 @@ function Reader({ prayer }: { prayer: Prayer }) {
         {translationColumn(edition)}
         {second !== null && translationColumn(second, true)}
       </div>
-      <section className="source-notes" aria-labelledby="notes-heading">
+      <section
+        id="sources"
+        tabIndex={-1}
+        className="source-notes"
+        aria-labelledby="notes-heading"
+      >
         <div>
           <p className="eyebrow">Read with context</p>
           <h2 id="notes-heading">Sources & notes</h2>
