@@ -18,7 +18,7 @@ Domain registration, DNS, and attaching the Custom Domain are bootstrap operatio
 
 The domain is registered with Cloudflare in Personal (AI). Its [DNS zone](https://dash.cloudflare.com/daabd388c9779fd8ffa3ad1b29960394/stoicprayers.org/dns/records) is `958af105fefdf0021911bfec66d45902`, with nameservers `joel.ns.cloudflare.com` and `leia.ns.cloudflare.com`. The apex is a Worker Custom Domain; Cloudflare manages its DNS record and certificate. A proxied `www` CNAME and a Redirect Rule send `www` requests to the HTTPS apex with HTTP 301, preserving the path and query string. Always Use HTTPS redirects HTTP requests to HTTPS.
 
-Registrant contact privacy is enabled. Registration expires on September 14, 2027 (UTC), and automatic renewal is disabled. Renew through [Cloudflare Registrar](https://dash.cloudflare.com/daabd388c9779fd8ffa3ad1b29960394/domains/registrations) before expiry. Registrar automation requires a user-owned token with Account / Registrar: Domains / Admin; keep this credential separate from CI's deployment token.
+Registrant contact privacy is enabled. Registration expires on September 14, 2027 (UTC), and automatic renewal is enabled using the account’s default payment method. Manage renewal through [Cloudflare Registrar](https://dash.cloudflare.com/daabd388c9779fd8ffa3ad1b29960394/domains/registrations). Registrar automation requires a user-owned token with Account / Registrar: Domains / Admin; keep this credential separate from CI's deployment token.
 
 ## Workflow
 
