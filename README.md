@@ -1,6 +1,6 @@
 # Stoic prayers
 
-A pre-rendered React Router v8 reader for ancient prayers, hymns, and reflections in Greek, Latin, and English. Intended production domain: [stoicprayers.org](https://stoicprayers.org).
+A pre-rendered React Router v8 reader for ancient prayers, hymns, and reflections in Greek, Latin, and English. Read it at [stoicprayers.org](https://stoicprayers.org).
 
 ## Development
 
