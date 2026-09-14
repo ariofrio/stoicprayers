@@ -8,11 +8,17 @@ The application uses React Router 8.3.1, Node 22.23.2, and Cloudflare Workers St
 - Cloudflare account: Personal (AI), `daabd388c9779fd8ffa3ad1b29960394`.
 - Worker: `stoicprayers`.
 - Worker origin: [stoicprayers.ariofrio-ai.workers.dev](https://stoicprayers.ariofrio-ai.workers.dev).
-- Intended production origin: [stoicprayers.org](https://stoicprayers.org).
+- Production origin: [stoicprayers.org](https://stoicprayers.org).
 - GitHub secret: `CLOUDFLARE_API_TOKEN`, scoped to Account / Workers Scripts / Edit in this account.
 - GitHub variables: `CLOUDFLARE_ACCOUNT_ID` and `PRODUCTION_URL`.
 
 Domain registration, DNS, and attaching the Custom Domain are bootstrap operations outside the CI token’s permissions. CI uploads versions and promotes them; it does not change domain routes. Set `PRODUCTION_URL` to the domain only after its DNS and certificate work. The workers.dev origin receives a noindex header.
+
+## Domain
+
+The domain is registered with Cloudflare in Personal (AI). Its [DNS zone](https://dash.cloudflare.com/daabd388c9779fd8ffa3ad1b29960394/stoicprayers.org/dns/records) is `958af105fefdf0021911bfec66d45902`, with nameservers `joel.ns.cloudflare.com` and `leia.ns.cloudflare.com`. The apex is a Worker Custom Domain; Cloudflare manages its DNS record and certificate. A proxied `www` CNAME and a Redirect Rule send `www` requests to the HTTPS apex with HTTP 301, preserving the path and query string. Always Use HTTPS redirects HTTP requests to HTTPS.
+
+Registrant contact privacy is enabled. Registration expires on September 14, 2027 (UTC), and automatic renewal is disabled. Renew through [Cloudflare Registrar](https://dash.cloudflare.com/daabd388c9779fd8ffa3ad1b29960394/domains/registrations) before expiry. Registrar automation requires a user-owned token with Account / Registrar: Domains / Admin; keep this credential separate from CI's deployment token.
 
 ## Workflow
 
@@ -30,7 +36,7 @@ Preview aliases have the form `pr-42-stoicprayers.ariofrio-ai.workers.dev`. The 
 2. Configure the repository secret and variables above. Keep Cloudflare Builds disconnected; GitHub Actions is the publisher.
 3. Push a passing commit to `main` and verify both CI and Publish.
 4. Open a PR, update it, and confirm its alias changes to the new version while the prior version-specific URL stays addressable.
-5. Verify apex DNS/HTTPS and the optional www redirect. Set `PRODUCTION_URL` to `https://stoicprayers.org`.
+5. Verify apex DNS/HTTPS and the www redirect. Set `PRODUCTION_URL` to `https://stoicprayers.org`.
 
 ## Rollback
 
