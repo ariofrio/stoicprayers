@@ -66,8 +66,8 @@ function Reader({ prayer }: { prayer: Prayer }) {
     ? hash.slice(1)
     : "historical";
   useEffect(() => {
-    if (hash === `#${section}`) {
-      const target = document.getElementById(section);
+    if (hash === `#${section}` || hash === "#sources") {
+      const target = document.getElementById(hash.slice(1));
       target?.scrollIntoView();
       target?.focus({ preventScroll: true });
     }
@@ -213,12 +213,19 @@ function Reader({ prayer }: { prayer: Prayer }) {
             to={`#${id}`}
             state={location.state}
             preventScrollReset
-            aria-current={section === id ? "location" : undefined}
+            aria-current={
+              hash !== "#sources" && section === id ? "location" : undefined
+            }
           >
             {label}
           </Link>
         ))}
-        <Link to="#sources" state={location.state} preventScrollReset>
+        <Link
+          to="#sources"
+          state={location.state}
+          preventScrollReset
+          aria-current={hash === "#sources" ? "location" : undefined}
+        >
           Sources &amp; notes
         </Link>
       </nav>
