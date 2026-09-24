@@ -1,5 +1,74 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
+
+test("English opens first and readers can switch texts or compare distinct editions", async ({
+  page,
+}) => {
+  await page.goto("/prayers/cleanthes-hymn-to-zeus");
+  await expect(page.locator("#historical")).toBeVisible();
+  await expect(page.locator("#original")).toBeHidden();
+  const sections = page.getByRole("navigation", { name: "Passage sections" });
+  await sections
+    .getByRole("link", { name: "Original text", exact: true })
+    .click();
+  await expect(page.locator("#original")).toBeVisible();
+  await expect(page.locator("#historical")).toBeHidden();
+  await page.reload();
+  await expect(page.locator("#original")).toBeVisible();
+  await page
+    .getByRole("button", { name: "Compare texts", exact: true })
+    .click();
+  await expect(page.locator("#historical")).toBeVisible();
+  await expect(page.locator("#modern")).toBeVisible();
+  await page.getByRole("button", { name: "Add translation" }).click();
+  const first = page.getByLabel("Historical translation", { exact: true });
+  const second = page.getByLabel("Additional translation", { exact: true });
+  expect(await first.inputValue()).not.toBe(await second.inputValue());
+  await expect(
+    second.locator(`option[value="${await first.inputValue()}"]`),
+  ).toHaveCount(0);
+  await sections
+    .getByRole("link", { name: "Additional translation", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Read", exact: true }).click();
+  await expect(page.locator("#additional")).toBeVisible();
+  await page.getByRole("button", { name: "Remove translation" }).click();
+  await expect(second).toHaveCount(0);
+  await expect(page.locator("#historical")).toBeVisible();
+});
+
+test("collection search survives a passage visit and supports separate search terms", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const search = page.getByRole("searchbox", { name: "Find a passage" });
+  await search.fill("Zeus Cleanthes");
+  await expect(page.locator(".passage-link")).toHaveCount(2);
+  await page.locator(".passage-link").first().click();
+  await expect(page).toHaveURL(/\/prayers\/cleanthes-hymn-to-zeus$/);
+  await page.goBack();
+  await expect(search).toHaveValue("Zeus Cleanthes");
+  await page.reload();
+  await expect(search).toHaveValue("Zeus Cleanthes");
+  await page.getByRole("button", { name: "Clear filters" }).click();
+  await expect(page.locator(".passage-link")).toHaveCount(22);
+  await page
+    .getByRole("combobox", { name: "Author", exact: true })
+    .selectOption("Seneca");
+  await expect(page.locator(".passage-link")).toHaveCount(4);
+  await page.locator(".passage-link").first().click();
+  await expect(page).toHaveURL(/\/prayers\/seneca-/);
+  await page.getByRole("link", { name: "← Collection", exact: true }).click();
+  await expect(
+    page.getByRole("combobox", { name: "Author", exact: true }),
+  ).toHaveValue("Seneca");
+  await search.fill("nonexistent");
+  await expect(
+    page.getByRole("heading", { name: "No passages found" }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Clear filters" }).click();
+  await expect(page.locator(".passage-link")).toHaveCount(22);
+});
 const prayers = JSON.parse(
   readFileSync(
     new URL("../../app/content/prayers.json", import.meta.url),
@@ -46,10 +115,14 @@ test("reader navigation, comparison, and deep-link reload work without hydration
   await page
     .getByLabel("Historical translation", { exact: true })
     .selectOption("1");
-  await page.getByRole("button", { name: "Compare another" }).click();
+  await page
+    .getByRole("button", { name: "Compare texts", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Add translation" }).click();
   await expect(page.getByLabel("Additional translation")).toBeVisible();
-  await page.getByRole("button", { name: "Continuous", exact: true }).click();
-  await expect(page.locator(".reading-grid")).toHaveClass(/continuous/);
+  await page.getByRole("button", { name: "Read", exact: true }).click();
+  await expect(page.locator("#historical")).toBeVisible();
+  await expect(page.locator("#original")).toBeHidden();
   await page.reload();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Hymn to Zeus",
@@ -122,7 +195,7 @@ test("section links reach translations and notes without JavaScript", async ({
   await page.goto(`${baseURL}/prayers/cleanthes-hymn-to-zeus`);
   const navigation = page.getByRole("navigation", { name: "Passage sections" });
   for (const [name, id] of [
-    ["Modern rendering", "modern"],
+    ["Literal draft", "modern"],
     ["Historical translation", "historical"],
     ["Sources & notes", "sources"],
     ["Original text", "original"],
@@ -132,4 +205,18 @@ test("section links reach translations and notes without JavaScript", async ({
     await expect(page.locator(`#${id}`)).toBeInViewport();
   }
   await context.close();
+});
+
+test("print includes the original and draft even in the focused English view", async ({
+  page,
+}) => {
+  await page.goto("/prayers/cleanthes-hymn-to-zeus");
+  await expect(page.locator("#original")).toBeHidden();
+  await page.emulateMedia({ media: "print" });
+  await expect(page.locator("#original")).toBeVisible();
+  await expect(page.locator("#modern")).toBeVisible();
+  await expect(page.locator("#historical")).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Compare texts", exact: true }),
+  ).toBeHidden();
 });

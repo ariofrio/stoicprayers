@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   Link,
+  NavLink,
   useLocation,
   isRouteErrorResponse,
 } from "react-router";
@@ -18,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#f6f1e7" />
+        <meta name="theme-color" content="#f8faf9" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Meta />
         <Links />
@@ -41,6 +42,7 @@ export default function App() {
   const [dark, setDark] = useState(false);
   const location = useLocation();
   useEffect(() => {
+    document.documentElement.dataset.enhanced = "true";
     setDark(document.documentElement.dataset.theme === "dark");
   }, []);
   useEffect(() => {
@@ -67,18 +69,29 @@ export default function App() {
       </a>
       <header className="site-header">
         <Link className="brand" to="/" aria-label="Stoic prayers home">
-          <span className="seal" aria-hidden="true">
-            Σ
-          </span>
+          <svg
+            className="book-mark"
+            aria-hidden="true"
+            viewBox="0 0 40 40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+          >
+            <path d="M20 10C15 6 9 6 4 7v25c6-1 11 0 16 4 5-4 10-5 16-4V7c-5-1-11-1-16 3Z" />
+            <path d="M20 10v26M9 14c3 0 5 1 7 2m-7 4c3 0 5 1 7 2m8-6c2-1 4-2 7-2m-7 8c2-1 4-2 7-2" />
+          </svg>
           <span>
-            Stoic prayers<small>A parallel text collection</small>
+            Stoic prayers<small>Ancient words, in translation</small>
           </span>
         </Link>
         <nav aria-label="Main navigation">
-          <Link to="/">Collection</Link>
-          <Link to="/about">About the texts</Link>
+          <NavLink to="/" end>
+            Collection
+          </NavLink>
+          <NavLink to="/about">About the texts</NavLink>
           <button
-            className="theme-button"
+            className="theme-button js-only"
             onClick={toggleTheme}
             aria-label={dark ? "Use light theme" : "Use dark theme"}
           >
@@ -89,11 +102,11 @@ export default function App() {
       </header>
       <Outlet />
       <footer className="site-footer">
-        <span>Read closely. Return often.</span>
+        <span>Stoic prayers</span>
         <div>
           <Link to="/about">Editorial method</Link>
           <a href="https://github.com/ariofrio/stoicprayers">
-            Source & corrections ↗
+            Source & corrections
           </a>
         </div>
       </footer>

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { Link, useLocation } from "react-router";
 import type { Route } from "./+types/prayer";
 import { catalog, type Prayer } from "../content/catalog";
 import { getPrayer } from "../content/prayers.server";
@@ -31,10 +31,52 @@ export default function PrayerRoute({ loaderData }: Route.ComponentProps) {
   return <Reader key={loaderData.prayer.id} prayer={loaderData.prayer} />;
 }
 
+function subscribeToHash(listener: () => void) {
+  window.addEventListener("hashchange", listener);
+  window.addEventListener("popstate", listener);
+  return () => {
+    window.removeEventListener("hashchange", listener);
+    window.removeEventListener("popstate", listener);
+  };
+}
+
 function Reader({ prayer }: { prayer: Prayer }) {
-  const [edition, setEdition] = useState(0);
+  const [edition, setEdition] = useState(() =>
+    prayer.editions.reduce(
+      (latest, item, i, editions) =>
+        Number(item.year) > Number(editions[latest].year) ? i : latest,
+      0,
+    ),
+  );
   const [second, setSecond] = useState<number | null>(null);
-  const [stacked, setStacked] = useState(false);
+  const [compare, setCompare] = useState(false);
+  const location = useLocation();
+  const hash = useSyncExternalStore(
+    subscribeToHash,
+    () => window.location.hash,
+    () => "",
+  );
+  const availableSections = [
+    "original",
+    "modern",
+    "historical",
+    ...(second !== null ? ["additional"] : []),
+  ];
+  const section = availableSections.includes(hash.slice(1))
+    ? hash.slice(1)
+    : "historical";
+  useEffect(() => {
+    if (hash === `#${section}`) {
+      const target = document.getElementById(section);
+      target?.scrollIntoView();
+      target?.focus({ preventScroll: true });
+    }
+  }, [hash, section]);
+  const collectionSearch =
+    typeof location.state?.collectionSearch === "string"
+      ? location.state.collectionSearch
+      : "";
+  const collectionUrl = collectionSearch ? `/?${collectionSearch}` : "/";
   const [copyMessage, setCopyMessage] = useState("");
   const index = catalog.findIndex((p) => p.id === prayer.id);
   async function copyLink() {
@@ -53,43 +95,62 @@ function Reader({ prayer }: { prayer: Prayer }) {
       <section
         id={extra ? "additional" : "historical"}
         tabIndex={-1}
-        className="text-column historical"
+        className={`text-column historical${extra ? " additional" : ""}`}
+        data-active={section === (extra ? "additional" : "historical")}
       >
         <header>
-          <p className="eyebrow">Historical translation</p>
-          <label
-            className="sr-only"
-            htmlFor={extra ? "second-edition" : "edition"}
-          >
-            {extra ? "Additional translation" : "Historical translation"}
-          </label>
-          <select
-            id={extra ? "second-edition" : "edition"}
-            value={value}
-            onChange={(event) =>
-              extra
-                ? setSecond(Number(event.target.value))
-                : setEdition(Number(event.target.value))
-            }
-          >
-            {prayer.editions.map((e, i) => (
-              <option key={`${e.name}-${e.year}`} value={i}>
-                {e.name} · {e.year}
-              </option>
-            ))}
-          </select>
+          <h2>{extra ? "Additional translation" : "Historical translation"}</h2>
+          {prayer.editions.length > 1 ? (
+            <label className="js-only">
+              <span className="sr-only">
+                {extra ? "Additional translation" : "Historical translation"}
+              </span>
+              <select
+                aria-label={
+                  extra ? "Additional translation" : "Historical translation"
+                }
+                value={value}
+                onChange={(event) =>
+                  extra
+                    ? setSecond(Number(event.target.value))
+                    : setEdition(Number(event.target.value))
+                }
+              >
+                {prayer.editions.map((option, i) =>
+                  i === (extra ? edition : second) ? null : (
+                    <option key={i} value={i}>
+                      {option.name.split(" — ")[0]} · {option.year}
+                    </option>
+                  ),
+                )}
+              </select>
+            </label>
+          ) : (
+            <p className="translator-name">
+              {e.name}, {e.year}
+            </p>
+          )}
+          {prayer.editions.length > 1 && (
+            <p className="translator-name no-js-only">
+              {e.name}, {e.year}
+            </p>
+          )}
           <p className="column-subtitle">
-            {e.year} · <a href={e.url}>Source edition ↗</a>
-            {extra && (
-              <>
-                {" "}
-                ·{" "}
-                <button className="text-button" onClick={() => setSecond(null)}>
-                  Remove
-                </button>
-              </>
+            {e.name.includes(" — ") && (
+              <span className="edition-context">
+                {e.name.split(" — ").slice(1).join(" — ")}
+              </span>
             )}
+            <a href={e.url}>Source edition</a>
           </p>
+          {extra && (
+            <button
+              className="text-button remove-translation"
+              onClick={() => setSecond(null)}
+            >
+              Remove translation
+            </button>
+          )}
         </header>
         <div className="passage-text">{e.text}</div>
         <p className="verification-note">{e.verification}</p>
@@ -99,7 +160,7 @@ function Reader({ prayer }: { prayer: Prayer }) {
   return (
     <main id="main" className="reader-page">
       <div className="reader-breadcrumb">
-        <Link to="/">← Collection</Link>
+        <Link to={collectionUrl}>← Collection</Link>
         <span>
           {index + 1} / {catalog.length}
         </span>
@@ -111,42 +172,73 @@ function Reader({ prayer }: { prayer: Prayer }) {
         <h1>{prayer.title}</h1>
         <p className="source-reference">{prayer.reference}</p>
       </section>
-      <div className="reader-tools">
-        <div className="view-switch" role="group" aria-label="Reading layout">
-          <button aria-pressed={!stacked} onClick={() => setStacked(false)}>
-            Parallel
+      <div className="reader-tools js-only">
+        <div className="view-switch" role="group" aria-label="Reading view">
+          <button aria-pressed={!compare} onClick={() => setCompare(false)}>
+            Read
           </button>
-          <button aria-pressed={stacked} onClick={() => setStacked(true)}>
-            Continuous
+          <button aria-pressed={compare} onClick={() => setCompare(true)}>
+            Compare texts
           </button>
         </div>
         <div className="reader-actions">
-          {prayer.editions.length > 1 && second === null && (
+          {compare && prayer.editions.length > 1 && second === null && (
             <button onClick={() => setSecond(edition === 0 ? 1 : 0)}>
-              Compare another
+              Add translation
             </button>
           )}
-          <button onClick={copyLink}>Copy link</button>
+          <button onClick={copyLink}>
+            {copyMessage === "Link copied" ? "Link copied" : "Copy link"}
+          </button>
           <button onClick={() => window.print()}>Print</button>
         </div>
+        <span className="sr-only" role="status">
+          {copyMessage}
+        </span>
       </div>
-      <p className="copy-status" role="status">
-        {copyMessage}
-      </p>
+      {copyMessage && copyMessage !== "Link copied" && (
+        <p className="copy-status">{copyMessage}</p>
+      )}
       <nav className="section-links" aria-label="Passage sections">
-        <span>Jump to</span>
-        <a href="#original">Original text</a>
-        <a href="#modern">Modern rendering</a>
-        <a href="#historical">Historical translation</a>
-        {second !== null && <a href="#additional">Additional translation</a>}
-        <a href="#sources">Sources &amp; notes</a>
+        {[
+          ["historical", "Historical translation"],
+          ["modern", "Literal draft"],
+          ["original", "Original text"],
+          ...(second !== null
+            ? [["additional", "Additional translation"]]
+            : []),
+        ].map(([id, label]) => (
+          <Link
+            key={id}
+            to={`#${id}`}
+            state={location.state}
+            preventScrollReset
+            aria-current={section === id ? "location" : undefined}
+          >
+            {label}
+          </Link>
+        ))}
+        <Link to="#sources" state={location.state} preventScrollReset>
+          Sources &amp; notes
+        </Link>
       </nav>
+      {compare && (
+        <p className="comparison-note">
+          Compare whole passages; lines are not aligned word for word. Texts
+          stack on smaller screens.
+        </p>
+      )}
       <div
-        className={`reading-grid${stacked ? " continuous" : ""}${second !== null ? " four-columns" : ""}`}
+        className={`reading-grid${compare ? " compare-view" : " read-view"}${second !== null ? " four-columns" : ""}`}
       >
-        <section id="original" tabIndex={-1} className="text-column original">
+        {!compare && translationColumn(edition)}
+        <section
+          id="original"
+          tabIndex={-1}
+          className="text-column original"
+          data-active={section === "original"}
+        >
           <header>
-            <p className="eyebrow">Original text</p>
             <h2>
               {prayer.originals.length > 1
                 ? "Greek & Latin"
@@ -167,19 +259,25 @@ function Reader({ prayer }: { prayer: Prayer }) {
             ))}
           </div>
         </section>
-        <section id="modern" tabIndex={-1} className="text-column literal">
+        <section
+          id="modern"
+          tabIndex={-1}
+          className="text-column literal"
+          data-active={section === "modern"}
+        >
           <header>
-            <p className="eyebrow">Modern rendering</p>
-            <h2>Close to the words</h2>
-            <p className="column-subtitle">Literal English · editorial draft</p>
+            <h2>Literal English</h2>
+            <p className="column-subtitle">
+              Editorial draft · developed with AI assistance
+            </p>
           </header>
           <div className="passage-text">{prayer.literal}</div>
           <p className="verification-note">
-            An editorial aid to reading, not a substitute for the original.{" "}
-            <Link to="/about#literal">About this rendering</Link>
+            An aid to reading that has not received independent specialist
+            review. <Link to="/about#literal">About this rendering</Link>
           </p>
         </section>
-        {translationColumn(edition)}
+        {compare && translationColumn(edition)}
         {second !== null && translationColumn(second, true)}
       </div>
       <section
@@ -189,7 +287,6 @@ function Reader({ prayer }: { prayer: Prayer }) {
         aria-labelledby="notes-heading"
       >
         <div>
-          <p className="eyebrow">Read with context</p>
           <h2 id="notes-heading">Sources & notes</h2>
         </div>
         <div>
@@ -209,9 +306,7 @@ function Reader({ prayer }: { prayer: Prayer }) {
             ))}
           </ul>
           <p className="small-note">
-            The source review is selective. Additional prototype transcriptions
-            are preserved in the repository pending verification.{" "}
-            <Link to="/about">Editorial method →</Link>
+            <Link to="/about">Editorial method</Link>
           </p>
         </div>
       </section>

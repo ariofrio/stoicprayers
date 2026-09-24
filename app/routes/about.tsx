@@ -21,7 +21,7 @@ export default function About() {
     <main id="main" className="prose-page">
       <Link to="/">← Collection</Link>
       <p className="eyebrow">Editorial method</p>
-      <h1>Words with a history.</h1>
+      <h1>About the texts</h1>
       <p className="lead">
         A small collection for careful reading, with a clear distinction between
         what the sources say and how we render them.
@@ -75,17 +75,19 @@ export default function About() {
       </p>
       <h2>Reading across editions</h2>
       <p>
-        Use “Jump to” above each passage to reach the original, modern
-        rendering, historical translation, or source notes directly. These links
-        also work without JavaScript and make long passages easier to read on a
-        phone.
+        Each passage opens with a historical English translation. Use the links
+        above the text to read the original, a literal English draft, or the
+        source notes. Without JavaScript, all three texts appear on the page and
+        these links jump to their sections.
       </p>
       <p>
-        Choose a historical translator from the selector above the English
-        column. “Compare another” adds a second edition. “Continuous” stacks the
-        texts for a longer reading session. Translations may include context
-        outside the selected ancient words; parallel presentation does not imply
-        exact line alignment.
+        Where more than one historical translation is available, choose an
+        edition above the English text. “Compare texts” brings the original,
+        literal draft, and historical translation together. “Add translation”
+        includes another historical edition. Texts appear side by side when
+        there is room, and stack on smaller screens. Translations may include
+        context outside the selected ancient words; the lines are not aligned
+        word for word.
       </p>
       <h2>Sources and corrections</h2>
       <p>
