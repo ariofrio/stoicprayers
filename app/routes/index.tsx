@@ -1,4 +1,5 @@
-import { Link, useSearchParams } from "react-router";
+import { useEffect, useRef, useState } from "react";
+import { Link, useNavigationType, useSearchParams } from "react-router";
 import { catalog, categories } from "../content/catalog";
 
 const authors = [...new Set(catalog.map((p) => p.author))];
@@ -17,8 +18,18 @@ export function meta() {
 
 export default function Collection() {
   const [params, setParams] = useSearchParams();
-  const query = params.get("q") || "";
-  const author = params.get("author") || "";
+  const [query, setQuery] = useState("");
+  const [author, setAuthor] = useState("");
+  const navigationType = useNavigationType();
+  const initialNavigation = useRef(true);
+  useEffect(() => {
+    // URL replacements must not overwrite keystrokes while navigation is pending.
+    if (initialNavigation.current || navigationType !== "REPLACE") {
+      setQuery(params.get("q") || "");
+      setAuthor(params.get("author") || "");
+      initialNavigation.current = false;
+    }
+  }, [params, navigationType]);
   const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const matching = catalog.filter((p) => {
     const text =
@@ -28,16 +39,24 @@ export default function Collection() {
       terms.every((term) => text.includes(term))
     );
   });
-  function filter(key: string, value: string) {
-    setParams(
-      (previous) => {
-        const next = new URLSearchParams(previous);
-        if (value) next.set(key, value);
-        else next.delete(key);
-        return next;
-      },
-      { replace: true, preventScrollReset: true },
-    );
+  function filter(key: "q" | "author", value: string) {
+    const values = {
+      q: key === "q" ? value : query,
+      author: key === "author" ? value : author,
+    };
+    setQuery(values.q);
+    setAuthor(values.author);
+    const next = new URLSearchParams(params);
+    for (const [name, text] of Object.entries(values)) {
+      if (text) next.set(name, text);
+      else next.delete(name);
+    }
+    setParams(next, { replace: true, preventScrollReset: true });
+  }
+  function clearFilters() {
+    setQuery("");
+    setAuthor("");
+    setParams({}, { replace: true, preventScrollReset: true });
   }
   return (
     <main id="main" className="collection-page">
@@ -105,12 +124,7 @@ export default function Collection() {
             {matching.length} of {catalog.length} passages
           </p>
           {(query || author) && (
-            <button
-              className="text-button"
-              onClick={() =>
-                setParams({}, { replace: true, preventScrollReset: true })
-              }
-            >
+            <button className="text-button" onClick={clearFilters}>
               Clear filters
             </button>
           )}

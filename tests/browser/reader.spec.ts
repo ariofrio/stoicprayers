@@ -40,8 +40,13 @@ test("English opens first and readers can switch texts or compare distinct editi
 test("collection search survives a passage visit and supports separate search terms", async ({
   page,
 }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
   const search = page.getByRole("searchbox", { name: "Find a passage" });
+  await search.pressSequentially("Marcus universe");
+  await expect(search).toHaveValue("Marcus universe");
+  await expect(page.locator(".passage-link")).toHaveCount(1);
   await search.fill("Zeus Cleanthes");
   await expect(page.locator(".passage-link")).toHaveCount(2);
   await page.locator(".passage-link").first().click();
@@ -68,6 +73,14 @@ test("collection search survives a passage visit and supports separate search te
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(page.locator(".passage-link")).toHaveCount(22);
+  await search.fill("Marcus");
+  await page
+    .getByRole("navigation", { name: "Main navigation" })
+    .getByRole("link", { name: "Collection", exact: true })
+    .click();
+  await expect(search).toHaveValue("");
+  await expect(page.locator(".passage-link")).toHaveCount(22);
+  expect(errors).toEqual([]);
 });
 const prayers = JSON.parse(
   readFileSync(
