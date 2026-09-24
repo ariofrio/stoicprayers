@@ -9,7 +9,8 @@ export async function smoke(origin, preview = false) {
       assert.equal(home.status, 200);
       assert.match(home.headers.get("cache-control") || "", /max-age=0/);
       const html = await home.text();
-      assert.match(html, /Words for what/);
+      assert.match(html, /id="collection-heading"/);
+      assert.match(html, /data-prayer-id="cleanthes-hymn-to-zeus"/);
       if (preview)
         assert.match(home.headers.get("x-robots-tag") || "", /noindex/);
       else assert.ok(!/noindex/.test(home.headers.get("x-robots-tag") || ""));
