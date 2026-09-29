@@ -801,8 +801,8 @@
         "url": "https://www.thelatinlibrary.com/sen/sen.prov.shtml"
       },
       {
-        "label": "Stewart’s translation",
-        "url": "https://en.wikisource.org/wiki/Of_Providence"
+        "label": "Basore’s translation",
+        "url": "https://www.stoics.com/seneca_essays_book_1.html"
       }
     ],
     "notes": [
@@ -983,8 +983,8 @@
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg002/tlg0557.tlg002.perseus-grc2.xml"
       },
       {
-        "label": "Higginson’s translation",
-        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg002/tlg0557.tlg002.perseus-eng4.xml"
+        "label": "Oldfather’s translation",
+        "url": "https://archive.org/details/epictetusdiscour02epicuoft"
       }
     ],
     "notes": [

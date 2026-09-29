@@ -43,3 +43,16 @@ test("the lightweight catalogue stays synchronized with published routes", () =>
     40,
   );
 });
+test("translation sources name an edition the reader displays", () => {
+  for (const p of prayers)
+    for (const source of p.sources) {
+      const translator = source.label.match(/(\S+)’s (?:edition|translation)/);
+      if (!translator) continue;
+      assert.ok(
+        p.editions.some(
+          (e) => e.name.includes(translator[1]) && e.url === source.url,
+        ),
+        `${p.id}: “${source.label}” does not link a displayed edition`,
+      );
+    }
+});
