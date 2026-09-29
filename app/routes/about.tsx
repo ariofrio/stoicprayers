@@ -83,12 +83,13 @@ export default function About() {
       </p>
       <p>
         Where more than one historical translation is available, choose an
-        edition above the English text. “Compare texts” brings the original,
-        literal draft, and historical translation together. “Add translation”
-        includes another historical edition. Texts appear side by side when
-        there is room, and stack on smaller screens. Translations may include
-        context outside the selected ancient words; the lines are not aligned
-        word for word.
+        edition above the English text. When a passage has more than one ancient
+        witness, the editions are grouped by the text they translate. “Compare
+        texts” brings the original, literal draft, and historical translation
+        together. “Add translation” includes another historical edition. Texts
+        appear side by side when there is room, and stack on smaller screens.
+        Translations may include context outside the selected ancient words; the
+        lines are not aligned word for word.
       </p>
       <h2>Sources and corrections</h2>
       <p>

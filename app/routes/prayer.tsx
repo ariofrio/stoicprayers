@@ -87,6 +87,17 @@ function Reader({ prayer }: { prayer: Prayer }) {
   }
   function translationColumn(value: number, extra = false) {
     const e = prayer.editions[value];
+    const options = (original?: string) =>
+      prayer.editions.map((option, i) =>
+        i === (extra ? edition : second) ||
+        (original &&
+          "original" in option &&
+          option.original !== original) ? null : (
+          <option key={i} value={i}>
+            {option.name.split(" — ")[0]} · {option.year}
+          </option>
+        ),
+      );
     return (
       <section
         id={extra ? "additional" : "historical"}
@@ -112,13 +123,13 @@ function Reader({ prayer }: { prayer: Prayer }) {
                     : setEdition(Number(event.target.value))
                 }
               >
-                {prayer.editions.map((option, i) =>
-                  i === (extra ? edition : second) ? null : (
-                    <option key={i} value={i}>
-                      {option.name.split(" — ")[0]} · {option.year}
-                    </option>
-                  ),
-                )}
+                {prayer.originals.length > 1
+                  ? prayer.originals.map((o) => (
+                      <optgroup key={o.language} label={o.label}>
+                        {options(o.language)}
+                      </optgroup>
+                    ))
+                  : options()}
               </select>
             </label>
           ) : (

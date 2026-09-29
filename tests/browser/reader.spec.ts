@@ -56,6 +56,22 @@ test("the featured quotation opens a translation of the quoted Greek", async ({
   );
   const select = page.getByLabel("Historical translation", { exact: true });
   await expect(select.locator("option:checked")).toHaveText(/Higginson · 1890/);
+  await expect(
+    select
+      .locator("optgroup")
+      .evaluateAll((groups) =>
+        groups.map((g) => [
+          g.getAttribute("label"),
+          [...g.querySelectorAll("option")].map((o) => o.textContent),
+        ]),
+      ),
+  ).resolves.toEqual([
+    ["Greek · Enchiridion 53.1", ["Thomas Wentworth Higginson · 1890"]],
+    [
+      "Latin adaptation · Letters 107.11",
+      ["Thomas Lodge · 1614", "Richard M. Gummere · 1925"],
+    ],
+  ]);
 });
 
 test("collection search survives a passage visit and supports separate search terms", async ({
