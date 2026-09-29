@@ -10,16 +10,16 @@ Only `build/client` is published, including React Router's navigation data. Unkn
 
 ## Publication contract
 
-| Event                                  | Validation                                                                                    | Publication                                                 |
-| -------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| PR against main                        | Exact PR head; install, formatting, types, content and deployment tests, build, browser tests | Version upload with stable `pr-<number>` alias              |
-| Push to main                           | Same checks on the pushed commit                                                              | Upload and check a candidate, then promote it to production |
-| Failed, closed, or superseded revision | Verify current state through GitHub's API                                                     | Skip publication                                            |
-| PR closed                              | Trusted workflow without checkout                                                             | Mark GitHub preview deployments inactive                    |
+| Event                                  | Validation                                                                                    | Publication                                                                         |
+| -------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| PR against main                        | Exact PR head; install, formatting, types, content and deployment tests, build, browser tests | Same-repository PRs: version upload with stable `pr-<number>` alias; fork PRs: none |
+| Push to main                           | Same checks on the pushed commit                                                              | Upload and check a candidate, then promote it to production                         |
+| Failed, closed, or superseded revision | Verify current state through GitHub's API                                                     | Skip publication                                                                    |
+| PR closed                              | Trusted workflow without checkout                                                             | Mark GitHub preview deployments inactive                                            |
 
 [CI](../.github/workflows/ci.yml) has read-only repository access and no deployment credentials. It uploads one immutable `site` artifact after all checks pass. The [publisher](../.github/workflows/deploy.yml) runs from trusted main on `workflow_run` completion. It validates the originating workflow, repository, event, result, and current branch or PR revision. The downloaded artifact must match its recorded SHA-256 digest.
 
-Artifact extraction rejects traversal, symlinks, duplicate or noncanonical paths, hidden configuration, unexpected file types, and excessive size or file counts. Static artifacts are never executed. Pinned Wrangler and deployment scripts come from trusted main, with no restored PR caches or PR configuration. The `_headers` file must match trusted main. Fork PRs can receive previews after any GitHub-required contributor approval.
+Artifact extraction rejects traversal, symlinks, duplicate or noncanonical paths, hidden configuration, unexpected file types, and excessive size or file counts. Static artifacts are never executed. Pinned Wrangler and deployment scripts come from trusted main, with no restored PR caches or PR configuration. The `_headers` file must match trusted main. Only PRs from branches in this repository receive previews. Fork PRs run CI but are never published, because a preview would serve arbitrary contributor HTML and JavaScript from the project’s workers.dev origin.
 
 Publication is serialized by source repository and branch. Immediately before promotion, the publisher rechecks that the commit is still current. Both preview and production candidates use `wrangler versions upload`; live smoke tests check the immutable version before production promotion through the Workers deployments API. The same artifact bytes serve both origins.
 

@@ -24,4 +24,4 @@ Edit [app/content/prayers.json](app/content/prayers.json) and keep [catalog.json
 
 ## Deployment
 
-GitHub Actions validates pushes to `main` and PR heads. A separate trusted workflow publishes the successful static artifact. PRs get a persistent Cloudflare version alias and a GitHub Deployment URL; production promotes a tested version. See [deployment operations](docs/deployment.md).
+GitHub Actions validates pushes to `main` and PR heads. A separate trusted workflow publishes the successful static artifact. Same-repository PRs get a persistent Cloudflare version alias and a GitHub Deployment URL; production promotes a tested version. See [deployment operations](docs/deployment.md).
