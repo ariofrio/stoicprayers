@@ -119,6 +119,34 @@ test("every passage is readable in its HTML before JavaScript runs", async ({
   }
 });
 
+test("every route has a social link preview", async ({ request }) => {
+  const routes = [
+    ["/", "website"],
+    ["/about", "website"],
+    ...prayers.map((p: { id: string }) => [`/prayers/${p.id}`, "article"]),
+  ];
+  for (const [path, type] of routes) {
+    const html = await (await request.get(path)).text();
+    const tag = (key: string) =>
+      html.match(
+        new RegExp(`<meta (?:property|name)="${key}" content="([^"]*)"`),
+      )?.[1];
+    const title = html.match(/<title>([^<]*)<\/title>/)?.[1];
+    const description = html.match(
+      /<meta name="description" content="([^"]*)"/,
+    )?.[1];
+    expect(tag("og:title"), path).toBe(title);
+    expect(tag("og:description"), path).toBe(description);
+    expect(tag("og:url"), path).toBe(`https://stoicprayers.org${path}`);
+    expect(tag("og:type"), path).toBe(type);
+    expect(tag("og:image"), path).toBe("https://stoicprayers.org/social.png");
+    expect(tag("twitter:card"), path).toBe("summary_large_image");
+  }
+  const image = await request.get("/social.png");
+  expect(image.status()).toBe(200);
+  expect(image.headers()["content-type"]).toBe("image/png");
+});
+
 test("reader pagination follows the collection's grouped order", async ({
   request,
 }) => {

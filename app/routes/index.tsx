@@ -1,19 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigationType, useSearchParams } from "react-router";
 import { catalog, categories } from "../content/catalog";
+import { pageMeta } from "../meta";
 
 const authors = [...new Set(catalog.map((p) => p.author))];
 
 export function meta() {
-  return [
-    { title: "Stoic prayers — Ancient texts and English translations" },
-    {
-      name: "description",
-      content:
-        "Read 22 ancient prayers, hymns, and reflections in Greek and Latin, alongside a literal rendering and historical English translations.",
-    },
-    { tagName: "link", rel: "canonical", href: "https://stoicprayers.org/" },
-  ];
+  return pageMeta({
+    title: "Stoic prayers — Ancient texts and English translations",
+    description:
+      "Read 22 ancient prayers, hymns, and reflections in Greek and Latin, alongside a literal rendering and historical English translations.",
+    path: "/",
+  });
 }
 
 export default function Collection() {
