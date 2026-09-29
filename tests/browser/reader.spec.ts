@@ -107,6 +107,32 @@ test("every passage is readable in its HTML before JavaScript runs", async ({
   }
 });
 
+test("reader pagination follows the collection's grouped order", async ({
+  request,
+}) => {
+  const collection = await (await request.get("/")).text();
+  const ids = [...collection.matchAll(/data-prayer-id="([^"]+)"/g)].map(
+    (match) => match[1],
+  );
+  expect(ids).toHaveLength(22);
+  for (const [i, id] of ids.entries()) {
+    const html = (
+      await (await request.get(`/prayers/${id}`)).text()
+    ).replaceAll("<!-- -->", "");
+    expect(html).toContain(`${i + 1} / ${ids.length}`);
+    const pagination = html.slice(
+      html.indexOf('aria-label="Adjacent passages"'),
+    );
+    const links = [...pagination.matchAll(/href="([^"]+)"/g)]
+      .slice(0, 2)
+      .map((match) => match[1]);
+    expect(links).toEqual([
+      i > 0 ? `/prayers/${ids[i - 1]}` : "/",
+      i < ids.length - 1 ? `/prayers/${ids[i + 1]}` : "/",
+    ]);
+  }
+});
+
 test("reader navigation, comparison, and deep-link reload work without hydration errors", async ({
   page,
 }) => {
