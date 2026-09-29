@@ -1,25 +1,42 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
-test("English opens first and readers can switch texts or compare distinct editions", async ({
+test("one reading control switches texts, compares editions, and keeps deep links", async ({
   page,
 }) => {
   await page.goto("/prayers/cleanthes-hymn-to-zeus");
   await expect(page.locator("#historical")).toBeVisible();
   await expect(page.locator("#original")).toBeHidden();
-  const sections = page.getByRole("navigation", { name: "Passage sections" });
-  await sections
-    .getByRole("link", { name: "Original text", exact: true })
-    .click();
+  const view = page.getByRole("navigation", { name: "Reading view" });
+  const option = (name: string) =>
+    view.getByRole("link", { name, exact: true });
+  await expect(option("Historical")).toHaveAttribute(
+    "aria-current",
+    "location",
+  );
+  await option("Original").click();
+  await expect(page).toHaveURL(/#original$/);
   await expect(page.locator("#original")).toBeVisible();
   await expect(page.locator("#historical")).toBeHidden();
   await page.reload();
   await expect(page.locator("#original")).toBeVisible();
-  await page
-    .getByRole("button", { name: "Compare texts", exact: true })
-    .click();
+  await expect(option("Original")).toHaveAttribute("aria-current", "location");
+  for (const [hash, name] of [
+    ["modern", "Literal"],
+    ["historical", "Historical"],
+  ]) {
+    await page.goto(`/prayers/cleanthes-hymn-to-zeus#${hash}`);
+    await expect(page.locator(`#${hash}`)).toBeVisible();
+    await expect(page.locator(`#${hash}`)).toBeFocused();
+    await expect(option(name)).toHaveAttribute("aria-current", "location");
+  }
+  await page.goto("/prayers/cleanthes-hymn-to-zeus#sources");
+  await expect(page.locator("#sources")).toBeInViewport();
+  await option("Compare").click();
+  await expect(page).toHaveURL(/#compare$/);
   await expect(page.locator("#historical")).toBeVisible();
   await expect(page.locator("#modern")).toBeVisible();
+  await expect(page.locator("#original")).toBeVisible();
   await page.getByRole("button", { name: "Add translation" }).click();
   const first = page.getByLabel("Historical translation", { exact: true });
   const second = page.getByLabel("Additional translation", { exact: true });
@@ -27,14 +44,57 @@ test("English opens first and readers can switch texts or compare distinct editi
   await expect(
     second.locator(`option[value="${await first.inputValue()}"]`),
   ).toHaveCount(0);
-  await sections
-    .getByRole("link", { name: "Additional translation", exact: true })
-    .click();
-  await page.getByRole("button", { name: "Read", exact: true }).click();
+  await option("Literal").click();
+  await expect(page.locator("#modern")).toBeVisible();
+  await expect(page.locator("#additional")).toBeHidden();
+  await option("Compare").click();
   await expect(page.locator("#additional")).toBeVisible();
   await page.getByRole("button", { name: "Remove translation" }).click();
   await expect(second).toHaveCount(0);
   await expect(page.locator("#historical")).toBeVisible();
+  await expect(page.locator("#original")).toBeVisible();
+});
+
+test("copy link and print are in the page actions menu", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.goto("/prayers/cleanthes-hymn-to-zeus");
+  const actions = page.locator("details.reader-menu");
+  const toggle = actions.locator("summary");
+  await expect(toggle).toHaveAccessibleName("Page actions");
+  const copy = page.getByRole("button", { name: "Copy link", exact: true });
+  await expect(copy).toBeHidden();
+  await toggle.click();
+  await expect(page.getByRole("button", { name: "Print" })).toBeVisible();
+  await copy.click();
+  await expect(page.getByRole("status")).toHaveText("Link copied");
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
+    "https://stoicprayers.org/prayers/cleanthes-hymn-to-zeus",
+  );
+  await page.keyboard.press("Escape");
+  await expect(actions).not.toHaveAttribute("open");
+  await expect(toggle).toBeFocused();
+  await expect(page.getByRole("button", { name: "Link copied" })).toBeHidden();
+});
+
+test("the passage begins in the first screen", async ({ page }) => {
+  for (const id of [
+    "cleanthes-prayer-to-zeus-and-destiny",
+    "epictetus-prayer-of-self-examination-in-illness-and-death",
+  ]) {
+    await page.goto(`/prayers/${id}`);
+    await expect(page.locator("html")).toHaveAttribute("data-enhanced", "true");
+    const firstLineBottom = await page
+      .locator("#historical .passage-text")
+      .evaluate((text) => {
+        const range = document.createRange();
+        range.selectNodeContents(text);
+        return range.getClientRects()[0].bottom;
+      });
+    expect(firstLineBottom).toBeLessThanOrEqual(page.viewportSize()!.height);
+  }
 });
 
 test("collection search survives a passage visit and supports separate search terms", async ({
@@ -128,12 +188,11 @@ test("reader navigation, comparison, and deep-link reload work without hydration
   await page
     .getByLabel("Historical translation", { exact: true })
     .selectOption("1");
-  await page
-    .getByRole("button", { name: "Compare texts", exact: true })
-    .click();
+  const view = page.getByRole("navigation", { name: "Reading view" });
+  await view.getByRole("link", { name: "Compare", exact: true }).click();
   await page.getByRole("button", { name: "Add translation" }).click();
   await expect(page.getByLabel("Additional translation")).toBeVisible();
-  await page.getByRole("button", { name: "Read", exact: true }).click();
+  await view.getByRole("link", { name: "Historical", exact: true }).click();
   await expect(page.locator("#historical")).toBeVisible();
   await expect(page.locator("#original")).toBeHidden();
   await page.reload();
@@ -196,7 +255,7 @@ test("reading works with JavaScript disabled", async ({ browser, baseURL }) => {
   await context.close();
 });
 
-test("section links reach translations and notes without JavaScript", async ({
+test("reading links reach translations and notes without JavaScript", async ({
   browser,
   baseURL,
 }) => {
@@ -206,14 +265,18 @@ test("section links reach translations and notes without JavaScript", async ({
   });
   const page = await context.newPage();
   await page.goto(`${baseURL}/prayers/cleanthes-hymn-to-zeus`);
-  const navigation = page.getByRole("navigation", { name: "Passage sections" });
+  const view = page.getByRole("navigation", { name: "Reading view" });
+  await expect(view.getByRole("link", { name: "Compare" })).toBeHidden();
   for (const [name, id] of [
-    ["Literal draft", "modern"],
-    ["Historical translation", "historical"],
+    ["Literal", "modern"],
+    ["Historical", "historical"],
     ["Sources & notes", "sources"],
-    ["Original text", "original"],
+    ["Original", "original"],
   ]) {
-    await navigation.getByRole("link", { name, exact: true }).click();
+    await page
+      .getByRole("main")
+      .getByRole("link", { name, exact: true })
+      .click();
     await expect(page).toHaveURL(new RegExp(`#${id}$`));
     await expect(page.locator(`#${id}`)).toBeInViewport();
   }
@@ -230,6 +293,7 @@ test("print includes the original and draft even in the focused English view", a
   await expect(page.locator("#modern")).toBeVisible();
   await expect(page.locator("#historical")).toBeVisible();
   await expect(
-    page.getByRole("button", { name: "Compare texts", exact: true }),
+    page.getByRole("navigation", { name: "Reading view" }),
   ).toBeHidden();
+  await expect(page.locator(".reader-menu")).toBeHidden();
 });
