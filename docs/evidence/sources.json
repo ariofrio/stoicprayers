@@ -19,9 +19,15 @@
   },
   {
     "url": "https://archive.org/details/bim_early-english-books-1475-1640_the-workes-of-lucius-ann_seneca-lucius-annus_1614",
-    "retrievedUrl": "https://archive.org/download/bim_early-english-books-1475-1640_the-workes-of-lucius-ann_seneca-lucius-annus_1614/bim_early-english-books-1475-1640_the-workes-of-lucius-ann_seneca-lucius-annus_1614_djvu.txt",
-    "retrievedOn": "2026-09-13",
-    "sha256": "0a19e23e0df75beccae0036a3a8a893151196ac5990eb837c37edb1b5959fc0a"
+    "retrievedUrl": "https://archive.org/download/bim_early-english-books-1475-1640_the-workes-of-lucius-ann_seneca-lucius-annus_1614/page/n492.jpg",
+    "retrievedOn": "2026-09-29",
+    "sha256": "6dfa7c798ff565f7fbfd52712ef40c67017f4872e71a0ac29bfb6db0a29ac720"
+  },
+  {
+    "url": "https://github.com/textcreationpartnership/A11899",
+    "retrievedUrl": "https://raw.githubusercontent.com/textcreationpartnership/A11899/master/A11899.xml",
+    "retrievedOn": "2026-09-29",
+    "sha256": "ea70ab2574fce8c81746c5ad975632c1fd7e084b2a25b093ea41d48dd1c4d31f"
   },
   {
     "url": "https://archive.org/details/bim_eighteenth-century_the-epistles-of-lucius-a_seneca-lucius-annaeus_1786_1",
