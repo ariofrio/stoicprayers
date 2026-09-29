@@ -75,10 +75,11 @@ export default function About() {
       </p>
       <h2>Reading across editions</h2>
       <p>
-        Each passage opens with a historical English translation. Use the links
-        above the text to read the original, a literal English draft, or the
-        source notes. Without JavaScript, all three texts appear on the page and
-        these links jump to their sections.
+        Each passage opens with a historical English translation of its primary
+        ancient text, chosen for faithfulness and clarity. Use the links above
+        the text to read the original, a literal English draft, or the source
+        notes. Without JavaScript, all three texts appear on the page and these
+        links jump to their sections.
       </p>
       <p>
         Where more than one historical translation is available, choose an

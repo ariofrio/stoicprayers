@@ -16,6 +16,28 @@ test("each passage has a complete original, a precise citation, and safe source 
       assert.equal(new URL(source.url).protocol, "https:");
   }
 });
+test("each passage defaults to one edition that translates its primary original", () => {
+  for (const p of prayers) {
+    const defaults = p.editions.filter((e) => e.default === true);
+    assert.equal(defaults.length, 1, p.id + " needs exactly one default");
+    const languages = p.originals.map((o) => o.language);
+    assert.equal(new Set(languages).size, languages.length);
+    for (const e of p.editions) {
+      if (p.originals.length > 1)
+        assert.ok(languages.includes(e.original), p.id + ": " + e.name);
+      else assert.equal(e.original, undefined, p.id + ": " + e.name);
+    }
+    if (p.originals.length > 1)
+      assert.equal(defaults[0].original, languages[0], p.id);
+  }
+  const cleanthes = prayers.find(
+    (p) => p.id === "cleanthes-prayer-to-zeus-and-destiny",
+  );
+  assert.match(
+    cleanthes.editions.find((e) => e.default).text,
+    /^Conduct me, Zeus, and thou, O Destiny/,
+  );
+});
 test("Higginson retains his historical wording instead of a modern substitution", () => {
   const p = prayers.find(
     (p) => p.id === "epictetus-prayer-of-self-examination-in-illness-and-death",

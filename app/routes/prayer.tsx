@@ -42,11 +42,7 @@ function subscribeToHash(listener: () => void) {
 
 function Reader({ prayer }: { prayer: Prayer }) {
   const [edition, setEdition] = useState(() =>
-    prayer.editions.reduce(
-      (latest, item, i, editions) =>
-        Number(item.year) > Number(editions[latest].year) ? i : latest,
-      0,
-    ),
+    prayer.editions.findIndex((e) => e.default),
   );
   const [second, setSecond] = useState<number | null>(null);
   const [compare, setCompare] = useState(false);

@@ -37,6 +37,27 @@ test("English opens first and readers can switch texts or compare distinct editi
   await expect(page.locator("#historical")).toBeVisible();
 });
 
+test("the featured quotation opens a translation of the quoted Greek", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const quote = page.locator(".opening-quote");
+  await expect(quote.locator("blockquote")).toHaveText(
+    /Lead me, Zeus,\s*and you too, Destiny\./,
+  );
+  await quote.getByRole("link", { name: "Read this passage" }).click();
+  await expect(page).toHaveURL(
+    /\/prayers\/cleanthes-prayer-to-zeus-and-destiny$/,
+  );
+  const historical = page.locator("#historical");
+  await expect(historical).toBeVisible();
+  await expect(historical.locator(".passage-text")).toHaveText(
+    /^Conduct me, Zeus, and thou, O Destiny,/,
+  );
+  const select = page.getByLabel("Historical translation", { exact: true });
+  await expect(select.locator("option:checked")).toHaveText(/Higginson · 1890/);
+});
+
 test("collection search survives a passage visit and supports separate search terms", async ({
   page,
 }) => {
