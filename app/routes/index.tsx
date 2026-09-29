@@ -33,7 +33,7 @@ export default function Collection() {
   const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const matching = catalog.filter((p) => {
     const text =
-      `${p.author} ${p.title} ${p.reference} ${p.category}`.toLocaleLowerCase();
+      `${p.author} ${p.title} ${p.reference} ${p.category} ${p.themes.join(" ")}`.toLocaleLowerCase();
     return (
       (!author || p.author === author) &&
       terms.every((term) => text.includes(term))
@@ -102,7 +102,7 @@ export default function Collection() {
                 type="search"
                 value={query}
                 onChange={(e) => filter("q", e.target.value)}
-                placeholder="Title, author, or source"
+                placeholder="Title, author, theme, or source"
               />
             </label>
             <label className="author-label">

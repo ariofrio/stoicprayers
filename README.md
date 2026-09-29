@@ -20,7 +20,7 @@ The checks cover formatting, TypeScript, content integrity, publication policy, 
 
 ## Content
 
-Edit [app/content/prayers.json](app/content/prayers.json) and keep [catalog.json](app/content/catalog.json) synchronized. The small catalogue is the only corpus-wide data included in the browser bundle; complete passages are loaded per route. Read the [content audit](docs/content-audit.md) before changing texts or attribution. The prototype is retained for provenance, and unsupported transcriptions are preserved outside the published reader.
+Edit [app/content/prayers.json](app/content/prayers.json) and keep [catalog.json](app/content/catalog.json) synchronized. The small catalogue is the only corpus-wide data included in the browser bundle; complete passages are loaded per route. Collection search reads each entry’s short, curated `themes` list rather than the passage texts. Read the [content audit](docs/content-audit.md) before changing texts or attribution. The prototype is retained for provenance, and unsupported transcriptions are preserved outside the published reader.
 
 ## Deployment
 

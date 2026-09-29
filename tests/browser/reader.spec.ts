@@ -82,6 +82,18 @@ test("collection search survives a passage visit and supports separate search te
   await expect(page.locator(".passage-link")).toHaveCount(22);
   expect(errors).toEqual([]);
 });
+test("collection search finds passages by theme", async ({ page }) => {
+  await page.goto("/");
+  const search = page.getByRole("searchbox", { name: "Find a passage" });
+  await search.fill("fate");
+  await expect(
+    page.locator(".passage-link").filter({ hasText: "Zeus and Destiny" }),
+  ).toHaveCount(1);
+  await search.fill("death gratitude");
+  await expect(
+    page.locator(".passage-link").filter({ hasText: "Final thanksgiving" }),
+  ).toHaveCount(1);
+});
 const prayers = JSON.parse(
   readFileSync(
     new URL("../../app/content/prayers.json", import.meta.url),
