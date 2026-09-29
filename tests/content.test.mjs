@@ -58,3 +58,23 @@ test("translation sources name an edition the reader displays", () => {
       );
     }
 });
+test("published edition text contains no OCR artifacts", () => {
+  const artifacts = [
+    [/\|/u, "a line-separator bar"],
+    [/\p{L}\d|\d\p{L}/u, "a digit inside a word"],
+    [/(?:^|[^\s\d]\s+)\d\s+\p{Ll}/mu, "a digit standing in for a letter"],
+    [/[ſﬀ-ﬆ]/u, "an unnormalized long s or ligature"],
+    [/[•◊�]/u, "an illegible-character marker"],
+    [/\b(?:andfor|andthe|ofthe|tothe|inthe)\b/iu, "run-together words"],
+  ];
+  for (const p of prayers)
+    for (const e of p.editions)
+      for (const [pattern, description] of artifacts) {
+        const match = e.text.match(pattern);
+        assert.equal(
+          match,
+          null,
+          `${p.id} (${e.name}) has ${description}: ${JSON.stringify(match?.[0])}`,
+        );
+      }
+});
