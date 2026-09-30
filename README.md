@@ -20,8 +20,8 @@ The checks cover formatting, TypeScript, content integrity, publication policy, 
 
 ## Content
 
-Edit [app/content/prayers.json](app/content/prayers.json) and keep [catalog.json](app/content/catalog.json) synchronized. The small catalogue is the only corpus-wide data included in the browser bundle; complete passages are loaded per route. Read the [content audit](docs/content-audit.md) before changing texts or attribution. The prototype is retained for provenance, and unsupported transcriptions are preserved outside the published reader.
+Edit [app/content/prayers.json](app/content/prayers.json) and keep [catalog.json](app/content/catalog.json) synchronized. The small catalogue is the only corpus-wide data included in the browser bundle; complete passages are loaded per route. Collection search reads each entry’s short, curated `themes` list rather than the passage texts. Read the [content audit](docs/content-audit.md) before changing texts or attribution. The prototype is retained for provenance, and unsupported transcriptions are preserved outside the published reader.
 
 ## Deployment
 
-GitHub Actions validates pushes to `main` and PR heads. A separate trusted workflow publishes the successful static artifact. PRs get a persistent Cloudflare version alias and a GitHub Deployment URL; production promotes a tested version. See [deployment operations](docs/deployment.md).
+GitHub Actions validates pushes to `main` and PR heads. A separate trusted workflow publishes the successful static artifact. Same-repository PRs get a persistent Cloudflare version alias and a GitHub Deployment URL; production promotes a tested version. See [deployment operations](docs/deployment.md).

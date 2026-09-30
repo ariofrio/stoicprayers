@@ -82,6 +82,18 @@ test("collection search survives a passage visit and supports separate search te
   await expect(page.locator(".passage-link")).toHaveCount(22);
   expect(errors).toEqual([]);
 });
+test("collection search finds passages by theme", async ({ page }) => {
+  await page.goto("/");
+  const search = page.getByRole("searchbox", { name: "Find a passage" });
+  await search.fill("fate");
+  await expect(
+    page.locator(".passage-link").filter({ hasText: "Zeus and Destiny" }),
+  ).toHaveCount(1);
+  await search.fill("death gratitude");
+  await expect(
+    page.locator(".passage-link").filter({ hasText: "Final thanksgiving" }),
+  ).toHaveCount(1);
+});
 const prayers = JSON.parse(
   readFileSync(
     new URL("../../app/content/prayers.json", import.meta.url),
@@ -104,6 +116,60 @@ test("every passage is readable in its HTML before JavaScript runs", async ({
     );
     expect(html).toContain(prayer.originals[0].text.slice(0, 35));
     expect(html).toContain('rel="canonical"');
+  }
+});
+
+test("every route has a social link preview", async ({ request }) => {
+  const routes = [
+    ["/", "website"],
+    ["/about", "website"],
+    ...prayers.map((p: { id: string }) => [`/prayers/${p.id}`, "article"]),
+  ];
+  for (const [path, type] of routes) {
+    const html = await (await request.get(path)).text();
+    const tag = (key: string) =>
+      html.match(
+        new RegExp(`<meta (?:property|name)="${key}" content="([^"]*)"`),
+      )?.[1];
+    const title = html.match(/<title>([^<]*)<\/title>/)?.[1];
+    const description = html.match(
+      /<meta name="description" content="([^"]*)"/,
+    )?.[1];
+    expect(tag("og:title"), path).toBe(title);
+    expect(tag("og:description"), path).toBe(description);
+    expect(tag("og:url"), path).toBe(`https://stoicprayers.org${path}`);
+    expect(tag("og:type"), path).toBe(type);
+    expect(tag("og:image"), path).toBe("https://stoicprayers.org/social.png");
+    expect(tag("twitter:card"), path).toBe("summary_large_image");
+  }
+  const image = await request.get("/social.png");
+  expect(image.status()).toBe(200);
+  expect(image.headers()["content-type"]).toBe("image/png");
+});
+
+test("reader pagination follows the collection's grouped order", async ({
+  request,
+}) => {
+  const collection = await (await request.get("/")).text();
+  const ids = [...collection.matchAll(/data-prayer-id="([^"]+)"/g)].map(
+    (match) => match[1],
+  );
+  expect(ids).toHaveLength(22);
+  for (const [i, id] of ids.entries()) {
+    const html = (
+      await (await request.get(`/prayers/${id}`)).text()
+    ).replaceAll("<!-- -->", "");
+    expect(html).toContain(`${i + 1} / ${ids.length}`);
+    const pagination = html.slice(
+      html.indexOf('aria-label="Adjacent passages"'),
+    );
+    const links = [...pagination.matchAll(/href="([^"]+)"/g)]
+      .slice(0, 2)
+      .map((match) => match[1]);
+    expect(links).toEqual([
+      i > 0 ? `/prayers/${ids[i - 1]}` : "/",
+      i < ids.length - 1 ? `/prayers/${ids[i + 1]}` : "/",
+    ]);
   }
 });
 

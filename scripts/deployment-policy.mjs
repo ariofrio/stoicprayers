@@ -15,12 +15,17 @@ export function validateTarget(run, currentMain, pulls) {
       return null;
     return { environment: "production", production: true, alias: "release" };
   }
-  if (run.event !== "pull_request") return null;
+  // Fork PRs are checked by CI but never published: previews serve PR code.
+  if (
+    run.event !== "pull_request" ||
+    run.head_repository?.full_name !== repository
+  )
+    return null;
   const pr = pulls.find(
     (pr) =>
       pr.state === "open" &&
       pr.head.sha === run.head_sha &&
-      pr.head.repo?.full_name === run.head_repository?.full_name &&
+      pr.head.repo?.full_name === repository &&
       pr.base.repo.full_name === repository &&
       pr.base.ref === "main",
   );

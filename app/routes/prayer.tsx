@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import type { Route } from "./+types/prayer";
 import { catalog, type Prayer } from "../content/catalog";
 import { getPrayer } from "../content/prayers.server";
+import { pageMeta } from "../meta";
 
 export function loader({ params }: Route.LoaderArgs) {
   const prayer = getPrayer(params.id);
@@ -13,18 +14,12 @@ export function loader({ params }: Route.LoaderArgs) {
 export function meta({ loaderData }: Route.MetaArgs) {
   if (!loaderData) return [{ title: "Passage not found — Stoic prayers" }];
   const { prayer } = loaderData;
-  return [
-    { title: `${prayer.title} — ${prayer.author} — Stoic prayers` },
-    {
-      name: "description",
-      content: `${prayer.author}, ${prayer.reference}. Read the original text, a literal rendering, and historical English translations.`,
-    },
-    {
-      tagName: "link",
-      rel: "canonical",
-      href: `https://stoicprayers.org/prayers/${prayer.id}`,
-    },
-  ];
+  return pageMeta({
+    title: `${prayer.title} — ${prayer.author} — Stoic prayers`,
+    description: `${prayer.author}, ${prayer.reference}. Read the original text, a literal rendering, and historical English translations.`,
+    path: `/prayers/${prayer.id}`,
+    type: "article",
+  });
 }
 
 export default function PrayerRoute({ loaderData }: Route.ComponentProps) {

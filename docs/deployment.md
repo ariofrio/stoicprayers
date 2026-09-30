@@ -28,7 +28,7 @@ Registrant contact privacy is enabled. Registration expires on September 14, 202
 
 The publisher uses `wrangler versions upload` for both destinations, checks the exact version URL, and promotes that same version for a current `main` push through Cloudflare’s deployments API. This refinement of the original architecture minimizes token permissions and tests a production candidate before routing traffic to it. A post-promotion smoke test verifies the configured production origin. Failure marks the GitHub deployment failed; rollback remains explicit.
 
-Preview aliases have the form `pr-42-stoicprayers.ariofrio-ai.workers.dev`. The GitHub Deployment and Actions summary contain both the stable alias and exact version URL. Publishing is serialized by source repository and branch, and stale runs are skipped. Closing a PR marks its deployment records inactive; Cloudflare may continue serving its last public preview. These URLs are not permanent archives.
+Same-repository PRs get preview aliases of the form `pr-42-stoicprayers.ariofrio-ai.workers.dev`; fork PRs are checked but not previewed. The GitHub Deployment and Actions summary contain both the stable alias and exact version URL. Publishing is serialized by source repository and branch, and stale runs are skipped. Closing a PR marks its deployment records inactive; Cloudflare may continue serving its last public preview. These URLs are not permanent archives.
 
 ## First deployment
 

@@ -40,16 +40,12 @@ test("only the current successful main push can publish production", () => {
     null,
   );
 });
-test("previews are tied to an open PR at the exact checked head, including forks", () => {
-  const run = {
-    ...base,
-    event: "pull_request",
-    head_repository: { full_name: "contributor/fork" },
-  };
+test("previews are tied to an open same-repository PR at the exact checked head", () => {
+  const run = { ...base, event: "pull_request" };
   const pr = {
     number: 42,
     state: "open",
-    head: { sha: "abc", repo: { full_name: "contributor/fork" } },
+    head: { sha: "abc", repo: { full_name: repo } },
     base: { ref: "main", repo: { full_name: repo } },
   };
   assert.equal(validateTarget(run, "main", [pr]).alias, "pr-42");
@@ -64,6 +60,18 @@ test("previews are tied to an open PR at the exact checked head, including forks
     validateTarget({ ...run, conclusion: "failure" }, "main", [pr]),
     null,
   );
+});
+
+test("fork PRs are checked but never published", () => {
+  const fork = { full_name: "contributor/fork" };
+  const run = { ...base, event: "pull_request", head_repository: fork };
+  const pr = {
+    number: 43,
+    state: "open",
+    head: { sha: "abc", repo: fork },
+    base: { ref: "main", repo: { full_name: repo } },
+  };
+  assert.equal(validateTarget(run, "main", [pr]), null);
 });
 
 test("publishing configuration is strict JSON", async () => {

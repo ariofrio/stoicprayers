@@ -48,7 +48,14 @@
         "text": "Κύδιστ᾽ ἀθανάτων, πολυώνυμε, παγκρατὲς ἀεὶ\nΖεῦ, φύσεως ἀρχηγέ, νόμου μέτα πάντα κυβερνῶν,\nχαῖρε· σὲ γὰρ πάντεσσι θέμις θνητοῖσι προσαυδᾶν.\nἐκ σοῦ γὰρ γένος ἐσμέν, ἑνὸς μίμημα λαχόντες\nμοῦνον, ὅσα ζώει τε καὶ ἕρπει θνήτ᾽ ἐπὶ γαῖαν.\nτῷ σε καθυμνήσω, καὶ σὸν κράτος αἰὲν ἀείσω.\n\nσοὶ δὴ πᾶς ὅδε κόσμος ἑλισσόμενος περὶ γαῖαν\nπείθεται, ᾗ κεν ἄγῃς, καὶ ἑκὼν ὑπὸ σεῖο κρατεῖται·\nτοῖον ἔχεις ὑποεργὸν ἀνικήτοις ἐνὶ χερσὶν\nἀμφήκη, πυρόεντα, ἀειζώοντα κεραυνόν.\nτοῦ γὰρ ὑπὸ πληγῆς φύσεως πάντ᾽ ἐρρίγασιν,\nᾧ σὺ κατευθύνεις κοινὸν λόγον ὃς διὰ πάντων\nφοιτᾷ, μιγνύμενος μεγάλους μικροῖς τε φάεσσιν,\nὡς τόσσος γεγαὼς, ὕπατος βασιλεὺς διὰ παντός.\n\nοὐδέ τι γίγνεται ἔργον ἐπὶ χθανὶ σοῦ δίχα, δαῖμον,\nοὔτε κατ᾽ αἰθέριον θεῖον πόλον οὔτ᾽ ἐνὶ πόντῳ,\nπλὴν ὁπόσα ῥέζουσι κακοὶ σφετέρῃσιν ἀνοίαις.\nἀλλὰ σὺ καὶ τὰ περισσὰ ἐπίστασαι ἄρτια θεῖναι,\nκαὶ κοσμεῖν τὰ ἄκοσμα, καὶ οὐ φίλα σοὶ φίλα ἐστίν.\nὧδε γὰρ εἰς ἓν ἅπαντα συνήρμοκας ἐσθλὰ κακοῖσιν,\nὥσθ᾽ ἕνα γίγνεσθαι πάντων λόγον αἰὲν ἐόντα,\nὃν φεύγοντες ἐῶσιν ὅσοι θνητῶν κακοί εἰσι\nδύσμοροι, οἵ τ᾽ ἀγαθῶν μὲν ἀεὶ κτῆσιν ποθέοντες\nοὔτ᾽ ἐσορῶσι θεοῦ κοινὸν νόμον, οὔτε κλύουσιν,\nᾧ κεν πειθόμενοι σὺν νῷ βίον ἐσθλὸν ἔχοιεν,\nαὐτοὶ δ᾽ αὖθ᾽ ὁρμῶσιν ἄνευ καλοῦ ἄλλος ἐπ᾽ ἄλλα.\nοἱ μὲν ὑπὲρ δόξης σπουδὴν δυσέριστον ἔχοντες,\nοἱ δ᾽ ἐπὶ κερδοσύνας τετραμμένοι οὐδενὶ κόσμῳ,\nἄλλοι δ᾽ εἰς ἄνεσιν καὶ σώματος ἡδέα ἔργα,\nσπεύδοντες μάλα πάμπαν ἐναντία τῶνδε γενέσθαι.\n\nἀλλὰ Ζεῦ πάνδωρε, κελαινεφές, ἀρχικέραυνε,\nἀνθρώπους ῥύσιο ἀπειροσύνης ἀπὸ λυγρῆς,\nἣν σύ, πάτερ, σκέδασον ψυχῆς ἄπο, δὸς δὲ κυρῆσαι\nγνώμης, ᾗ πίσυνος σὺ δίκης μέτα πάντα κυβερνᾷς,\nὄφρ᾽ ἂν τιμηθέντες ἀμειβώμεσθά σε τιμῇ\nὑμνοῦντες τὰ σὰ ἔργα διηνεκές, ὡς ἐπέοικε\nθνητὸν ἐόντ᾽, ἐπεὶ οὔτε βροτοῖς γέρας ἄλλο τι μεῖζον,\nοὔτε θεοῖς, ἢ κοινὸν ἀεὶ νόμον ἐν δίκῃ ὑμνεῖν."
       }
     ],
-    "summary": "Most honored of the immortals, many-named, ever almighty Zeus, originator of nature, steering all things by law: hail. For it is right for every mortal to address you. From you we have our birth, alone receiving an image of the One among all mortal things that live and move upon the earth. Therefore I shall hymn you and sing of your power always."
+    "themes": [
+      "reason",
+      "divine law",
+      "nature",
+      "justice",
+      "ignorance",
+      "praise"
+    ]
   },
   {
     "id": "cleanthes-prayer-to-zeus-and-destiny",
@@ -112,7 +119,7 @@
         "text": "Duc, o parens celsique dominator poli,\nquocumque placuit: nulla parendi mora est.\nAdsum impiger. Fac nolle: comitabor gemens\nmalusque patiar facere quod licuit bono.\nDucunt volentem fata, nolentem trahunt."
       }
     ],
-    "summary": "Lead me, Zeus, and you too, Destiny, wherever I have been assigned by you. I shall follow without hesitation. But if I am unwilling, becoming base, I shall follow no less."
+    "themes": ["fate", "acceptance", "obedience", "freedom"]
   },
   {
     "id": "epictetus-prayer-for-the-arrival-of-difficulties",
@@ -168,7 +175,7 @@
         "text": "ἄγε οὖν καὶ σὺ τούτων αἰσθόμενος ἀπόβλεψον εἰς τὰς δυνάμεις ἃς ἔχεις καὶ ἀπιδὼν εἰπὲ φέρε νῦν, ὦ Ζεῦ, ἣν θέλεις περίστασιν· ἔχω γὰρ παρασκευὴν ἐκ σοῦ μοι δεδομένην καὶ ἀφορμὰς πρὸς τὸ κοσμῆσαι διὰ τῶν ἀποβαινόντων ἐμαυτόν"
       }
     ],
-    "summary": "Bring now, Zeus, whatever circumstance you wish; for I have preparedness given to me by you, and resources for putting myself in good order through the things that happen."
+    "themes": ["hardship", "adversity", "suffering", "resilience"]
   },
   {
     "id": "epictetus-hymn-of-gratitude-for-the-gifts-of-life",
@@ -206,7 +213,7 @@
         "text": "ταῦτα μόνα ἐστὶν ἔργα ἐφʼ ἡμῶν τῆς προνοίας; καὶ τίς ἐξαρκεῖ λόγος ὁμοίως αὐτὰ ἐπαινέσαι ἢ παραστῆσαι; εἰ γὰρ νοῦν εἴχομεν, ἄλλο τι ἔδει ἡμᾶς ποιεῖν καὶ κοινῇ καὶ ἰδίᾳ ἢ ὑμνεῖν τὸ θεῖον καὶ εὐφημεῖν καὶ ἐπεξέρχεσθαι τὰς χάριτας;\n\nοὐκ ἔδει καὶ σκάπτοντας καὶ ἀροῦντας καὶ ἐσθίοντας ᾁδειν τὸν ὕμνον τὸν εἰς τὸν θεόν; μέγας ὁ θεὸς, ὅτι ἡμῖν παρέσχεν ὄργανα ταῦτα διʼ ὧν τὴν γῆν ἐργασόμεθα·\n\nμέγας ὁ θεός, ὅτι χεῖρας δέδωκεν, ὅτι κατάποσιν, ὅτι κοιλίαν, ὅτι αὔξεσθαι λεληθότως, ὅτι καθεύδοντας ἀναπνεῖν.\n\nταῦτα ἐφʼ ἑκάστου ἐφυμνεῖν ἔδει καὶ τὸν μέγιστον καὶ θειότατον ὕμνον ἐφυμνεῖν, ὅτι τὴν δύναμιν ἔδωκεν τὴν παρακολουθητικὴν τούτοις καὶ ὁδῷ χρηστικήν.\n\nτί οὖν; ἐπεὶ οἱ πολλοὶ ἀποτετύφλωσθε, οὐκ ἔδει τινὰ εἶναι τὸν ταύτην ἐκπληροῦντα τὴν χώραν καὶ ὑπὲρ πάντων ᾁδοντα τὸν ὕμνον τὸν εἰς τὸν θεόν;\n\nτί γὰρ ἄλλο δύναμαι γέρων χωλὸς εἰ μὴ ὑμνεῖν τὸν θεόν; εἰ γοῦν ἀηδὼν ἤμην, ἐποίουν τὰ τῆς ἀηδόνος, εἰ κύκνος, τὰ τοῦ κύκνου.\n\nνῦν δὲ λογικός εἰμι· ὑμνεῖν με δεῖ τὸν θεόν. τοῦτό μου τὸ ἔργον ἐστίν, ποιῶ αὐτὸ οὐδʼ ἐγκαταλείψω τὴν τάξιν ταύτην, ἐφʼ ὅσον ἂν διδῶται, καὶ ὑμᾶς ἐπὶ τὴν αὐτὴν ταύτην ᾠδὴν παρακαλῶ."
       }
     ],
-    "summary": "Are these alone the works of providence on our behalf? What account is sufficient to praise or represent them adequately? If we had understanding, what else ought we to do, both together and privately, but hymn the divine, speak well of it, and recount its favors?"
+    "themes": ["gratitude", "praise", "providence", "reason", "purpose"]
   },
   {
     "id": "epictetus-prayer-of-complete-surrender",
@@ -246,7 +253,7 @@
         "text": "τόλμησον ἀναβλέψας πρὸς τὸν θεὸν εἰπεῖν ὅτι χρῶ μοι λοιπὸν εἰς ὃ ἂν θέλῃς· ὁμογνωμονῶ σοι, σός εἰμι· οὐδὲν παραιτοῦμαι τῶν σοὶ δοκούντων· ὅπου θέλεις, ἄγε· ἣν θέλεις ἐσθῆτα περίθες. ἄρχειν με θέλεις, ἰδιωτεύειν, μένειν, φεύγειν, πένεσθαι, πλουτεῖν; ἐγώ σοι ὑπὲρ ἁπάντων τούτων πρὸς τοὺς ἀνθρώπους ἀπολογήσομαι· δείξω τὴν ἑκάστου φύσιν οἵα ἐστίν."
       }
     ],
-    "summary": "Dare to look up toward God and say: “Use me from now on for whatever you wish. I agree with you; I am yours. I refuse none of the things that seem good to you. Lead me wherever you wish; put whatever clothing you wish on me. Do you wish me to govern or to live as a private person, to remain or to go into exile, to be poor or rich? On your behalf I shall defend all these conditions before other people; I shall show what the nature of each one is.”"
+    "themes": ["surrender", "acceptance", "exile", "poverty", "wealth", "duty"]
   },
   {
     "id": "epictetus-prayer-of-self-examination-in-illness-and-death",
@@ -284,7 +291,7 @@
         "text": "ἐμοὶ μὲν γὰρ καταληφθῆναι γένοιτο μηδενὸς ἄλλου ἐπιμελουμένῳ ἢ τῆς προαιρέσεως τῆς ἐμῆς, ἵνʼ ἀπαθής, ἵνʼ ἀκώλυτος, ἵνʼ ἀνανάγκαστος, ἵνʼ ἐλεύθερος.\n\nταῦτα ἐπιτηδεύων θέλω εὑρεθῆναι, ἵνʼ εἰπεῖν δύνωμαι τῷ θεῷ μή τι παρέβην σου τὰς ἐντολάς; μή τι πρὸς ἄλλα ἐχρησάμην ταῖς ἀφορμαῖς ἃς ἔδωκας; μή τι ταῖς αἰσθήσεσιν ἄλλως, μή τι ταῖς προλήψεσιν; μή τί σοί ποτʼ ἐνεκάλεσα;\n\nμή τι ἐμεμψάμην σου τὴν διοίκησιν; ἐνόσησα, ὅτε ἠθέλησας· καὶ οἱ ἄλλοι, ἀλλʼ ἐγὼ ἑκών. πένης ἐγενόμην σου θέλοντος, ἀλλὰ χαίρων. οὐκ ἦρξα, ὅτι σὺ οὐκ ἠθέλησας· οὐδέποτʼ ἐπεθύμησα ἀρχῆς. μή τί με τούτου ἕνεκα στυγνότερον εἶδες; μὴ οὐ προσῆλθόν σοί ποτε φαιδρῷ τῷ προσώπῳ, ἕτοιμος εἴ τι ἐπιτάσσεις, εἴ τι σημαίνεις;\n\nνῦν με θέλεις ἀπελθεῖν ἐκ τῆς πανηγύρεως· ἄπειμι, χάριν σοι ἔχω πᾶσαν, ὅτι ἠξίωσάς με συμπανηγυρίσαι σοι καὶ ἰδεῖν ἔργα τὰ σὰ καὶ τῇ διοικήσει σου συμπαρακολουθῆσαι ."
       }
     ],
-    "summary": "May I be found attending to nothing but my own faculty of choice, so that it may be free from passion, unhindered, unforced, and free."
+    "themes": ["illness", "death", "poverty", "freedom", "gratitude"]
   },
   {
     "id": "epictetus-prayer-concerning-remaining-alive-or-departing",
@@ -324,7 +331,7 @@
         "text": "ἔτι μʼ εἶναι θέλεις; ὡς ἐλεύθερος, ὡς γενναῖος, ὡς σὺ ἠθέλησας· σὺ γάρ με ἀκώλυτον ἐποίησας ἐν τοῖς ἐμοῖς.\n\nἀλλʼ οὐκέτι μου χρείαν ἔχεις; καλῶς σοι γένοιτο· καὶ μέχρι νῦν διὰ σὲ ἔμενον, διʼ ἄλλον οὐδένα, καὶ νῦν σοι πειθόμενος ἀπέρχομαι.\n\nπῶς ἀπέρχῃ; πάλιν ὡς σὺ ἠθέλησας, ὡς ἐλεύθερος, ὡς ὑπηρέτης σός, ὡς ᾐσθημένος σου τῶν προσταγμάτων καὶ ἀπαγορευμάτων.\n\nμέχρι δʼ ἂν οὗ διατρίβω ἐν τοῖς σοῖς, τίνα με θέλεις εἶναι; ἄρχοντα ἢ ἰδιώτην, βουλευτὴν ἢ δημότην, στρατιώτην ἢ στρατηγόν, παιδευτὴν ἢ οἰκοδεσπότην; ἣν ἂν χώραν καὶ τάξιν ἐγχειρίσῃς, ὡς λέγει ὁ Σωκράτης, μυριάκις ἀποθανοῦμαι πρότερον ἢ ταύτην ἐγκαταλείψω.\n\nποῦ δέ μʼ εἶναι θέλεις; ἐν Ῥώμῃ ἢ ἐν Ἀθήναις ἢ ἐν Θήβαις ἢ ἐν Γυάροις; μόνον ἐκεῖ μου μέμνησο.\n\nἄν μʼ ἐκεῖ πέμπῃς, ὅπου κατὰ φύσιν διεξαγωγὴ οὐκ ἔστιν ἀνθρώπων, οὐ σοὶ ἀπειθῶν ἔξειμι, ἀλλʼ ὡς σοῦ μοι σημαίνοντος τὸ ἀνακλητικόν· οὐκ ἀπολείπω σε· μὴ γένοιτο· ἀλλʼ αἰσθάνομαι, ὅτι μου χρείαν οὐκ ἔχεις.\n\nἂν δὲ διδῶται κατὰ φύσιν διεξαγωγή, οὐ ζητήσω ἄλλον τόπον ἢ ἐν ᾧ εἰμὶ ἢ ἄλλους ἀνθρώπους ἢ μεθʼ ὧν εἰμί."
       }
     ],
-    "summary": "Do you wish me still to exist? Then as free and noble, as you wished—for you made me unhindered in what is my own. But do you no longer need me? May it go well for you. Until now I remained for your sake alone, no one else’s; and now, obeying you, I depart."
+    "themes": ["death", "life", "duty", "exile", "obedience"]
   },
   {
     "id": "epictetus-final-thanksgiving-and-return-of-life",
@@ -362,7 +369,7 @@
         "text": "ἃς ἔλαβον ἀφορμὰς παρὰ σοῦ πρὸς τὸ αἰσθέσθαι σου τῆς διοικήσεως καὶ ἀκολουθῆσαι αὐτῇ, τούτων οὐκ ἠμέλησα· οὐ κατῄσχυνά σε τὸ ἐμὸν μέρος.\n\nἰδοῦ, πῶς κέχρημαι ταῖς αἰσθήσεσιν, ἰδοῦ, πῶς ταῖς προλήψεσιν. μή ποτέ σε ἐμεμψάμην, μή τι τῶν γινομένων τινὶ δυσηρέστησα ἢ ἄλλως γενέσθαι ἠθέλησα, μή τι τὰς σχέσεις παρέβην;\n\nὅ με σὺ ἐγέννησας, χάριν ἔχω, ὧν ἔδωκας· ἐφʼ ὅσον ἐχρησάμην τοῖς σοῖς, ἀρκεῖ μοι. πάλιν αὐτὰ ἀπόλαβε καὶ κατάταξον εἰς ἣν θέλεις χώραν. σὰ γὰρ ἦν πάντα, σύ μοι αὐτὰ δέδωκας."
       }
     ],
-    "summary": "I did not neglect the resources I received from you for understanding your government and following it; for my part, I did not bring shame on you. See how I have used my senses; see how I have used my preconceptions. Did I ever blame you? Was I ever displeased at anything that happened, or wish it to happen otherwise? Did I violate my relationships? I thank you for giving me birth, and for what you gave. The time for which I used your things is enough for me. Take them back again and assign them wherever you wish. For everything was yours; you gave it to me."
+    "themes": ["death", "gratitude", "life", "acceptance"]
   },
   {
     "id": "marcus-aurelius-three-prayers-of-inward-freedom",
@@ -407,7 +414,7 @@
         "text": "Ἤτοι οὐδὲν δύνανται οἱ θεοὶ ἢ δύνανται. εἰ μὲν οὖν μὴ δύνανται, τί εὔχῃ; εἰ δὲ δύνανται, διὰ τί οὐχὶ μᾶλλον εὔχῃ. διδόναι αὐτοὺς τὸ μήτε φοβεῖσθαί τι τούτων μήτε ἐπιθυμεῖν τινος τούτων μήτε λυπεῖσθαι ἐπί τινι τούτων, μᾶλλον ἤπερ τὸ μὴ παρεῖναί τι τούτων ἢ τὸ παρεῖναι; πάντως γάρ, εἰ δύνανται συνεργεῖν ἀνθρώποις, καὶ εἰς ταῦτα δύνανται συνεργεῖν. ἀλλὰ ἴσως ἐρεῖς ὅτι· ἐπ’ ἐμοὶ αὐτὰ οἱ θεοὶ ἐποίησαν. εἶτα οὐ κρεῖσσον χρῆσθαι τοῖς ἐπὶ σοὶ μετ’ ἐλευθερίας ἣ διαφέρεσθαι πρὸς τὰ μὴ ἐπὶ σοὶ μετὰ δουλείας καὶ ταπεινότητος; τίς δέ σοι εἶπεν ὅτι οὐχὶ καὶ εἰς τὰ ἐφ̓ ἡμῖν οἱ θεοὶ συλλαμβάνουσιν; ἄρξαι γοῦν περὶ τούτων εὔχεσθαι καὶ ὄψει. οὗτος εὔχεται· πῶς κοιμηθῶ μετ’ ἐκείνης· σύ· πῶς μὴ ἐπιθυμήσω τοῦ κοιμηθῆναι μετ’ ἐκείνης. ἄλλος· πῶς στερηθῶ ἐκείνου· σύ· πῶς μὴ χρῄζω τοῦ στερηθῆναι. ἄλλος· πῶς μὴ ἀποβάλω τὸ τεκνίον· σύ· πῶς μὴ φοβηθῶ ἀποβαλεῖν. ὅλως ὧδε ἐπίστρεψον τὰς εὐχὰς καὶ θεώρει τί γίνεται."
       }
     ],
-    "summary": "Either the gods have no power, or they do. If they have no power, why do you pray? But if they do, why not pray that they give you freedom from fearing, desiring, or grieving over any of these things, rather than that one of them be absent or present? Certainly, if the gods can cooperate with human beings, they can cooperate toward these ends."
+    "themes": ["freedom", "desire", "fear", "grief", "loss", "how to pray"]
   },
   {
     "id": "marcus-aurelius-address-to-the-universe",
@@ -459,7 +466,7 @@
         "text": "Πᾶν μοι συναρμόζει ὃ σοὶ εὐάρμοστόν ἐστιν, ὦ κόσμε· οὐδέν μοι πρόωρον οὐδὲ ὄψιμον ὃ σοὶ εὔκαιρον. πᾶν μοι καρπὸς ὃ φέρουσιν αἱ σαὶ ὧραι, ὦ φύσις· ἐκ σοῦ πάντα, ἐν σοὶ πάντα, εἰς σὲ πάντα. ἐκεῖνος μέν φησιν· ʽὦ πόλι φίλη Κέκροπος·ʼ σὺ δὲ οὐκ ἐρεῖς· ʽὦ πόλι φίλη Διός;ʼ"
       }
     ],
-    "summary": "Everything is fitting for me that fits together well for you, O ordered world. Nothing is early or late for me that is timely for you. Everything is fruit to me that your seasons bear, O Nature. From you are all things; in you are all things; into you are all things. One man says, “Dear city of Cecrops”; will you not say, “Dear city of Zeus”?"
+    "themes": ["nature", "cosmos", "acceptance", "fate", "time"]
   },
   {
     "id": "marcus-aurelius-i-love-as-thou-lovest",
@@ -504,7 +511,7 @@
         "text": "ʽἘρᾷ μὲν ὄμβρου γαῖα, ἐρᾷ δὲ ὁ σεμνὸς αἰθήρ,ʼ ἐρᾷ δὲ ὁ κόσμος ποιῆσαι ὃ ἂν μέλλῃ γίνεσθαι. λέγω οὖν τῷ κόσμῳ ὅτι σοὶ συνερῶ. μήτι δὲ οὕτω κἀκεῖνο λέγεται, ὅτι· φιλεῖ τοῦτο γίνεσθαι;"
       }
     ],
-    "summary": "“The earth loves the rain; the august upper air loves it too.” And the ordered world loves to make whatever is going to come to be. So I say to the ordered world: I love together with you. Is this not also what people mean when they say that a thing “loves” to happen?"
+    "themes": ["nature", "cosmos", "love", "acceptance", "fate"]
   },
   {
     "id": "marcus-aurelius-thanksgiving-for-his-life",
@@ -574,7 +581,7 @@
         "text": "Παρὰ τῶν θεῶν τὸ ἀγαθοὺς πάππους, ἀγαθοὺς γονέας, ἀγαθὴν ἀδελφήν, ἀγαθοὺς διδασκάλους, ἀγαθοὺς οἰκείους, συγγενεῖς, φίλους σχεδὸν ἅπαντας ἔχειν· καὶ ὅτι περὶ οὐδένα αὐτῶν προέπεσον πλημμελῆσαί τι, καίτοι διάθεσιν ἔχων τοιαύτην, ἀφ’ ἧς, εἰ ἔτυχε, κἂν ἔπραξά τι τοιοῦτο· τῶν θεῶν δὲ εὐποιία τὸ μηδεμίαν συνδρομὴν πραγμάτων γενέσθαι, ἥτις ἔμελλέ με ἐλέγξειν. καὶ τὸ μὴ ἐπὶ πλέον τραφῆναι παρὰ τῇ παλλακῇ τοῦ πάππου καὶ τὸ τὴν ὥραν διασῶσαι καὶ τὸ μὴ πρὸ ὥρας ἀνδρωθῆναι, ἀλλ’ ἔτι καὶ ἐπιλαβεῖν τοῦ χρόνου. τὸ ἄρχοντι καὶ πατρὶ ὑποταχθῆναι, ὃς ἔμελλε πάντα τὸν τῦφον ἀφαιρήσειν μου καὶ εἰς ἔννοιαν ἄξειν τοῦ ὅτι δυνατόν ἐστιν ἐν αὐλῇ βιοῦντα μήτε δορυφορήσεων χρῄζειν μήτε ἐσθήτων σημειωδῶν μήτε λαμπάδων καὶ ἀνδριάντων τοιῶνδέ τινων καὶ τοῦ ὁμοίου κόμπου, ἀλλʼ ἔξεστιν ἐγγυτάτω ἰδιώτου συστέλλειν ἑαυτὸν καὶ μὴ διὰ τοῦτο ταπεινότερον ἢ ῥᾳθυμότερον ἔχειν πρὸς τὰ ὑπὲρ τῶν κοινῶν ἡγεμονικῶς πραχθῆναι δέοντα. τὸ ἀδελφοῦ τοιούτου τυχεῖν, δυναμένου μὲν διὰ ἤθους ἐπεγεῖραί με πρὸς ἐπιμέλειαν ἐμαυτοῦ, ἅμα δὲ καὶ τιμῇ καὶ στοργῇ εὐφραίνοντός με· τὸ παιδία μοι ἀφυῆ μὴ γενέσθαι μηδὲ κατὰ τὸ σωμάτιον διάστροφα. τὸ μὴ ἐπὶ πλέον με προκόψαι ἐν ῥητορικῇ καὶ ποιητικῇ καὶ τοῖς ἄλλοις ἐπιτηδεύμασιν, ἐν οἷς ἴσως ἂν κατεσχέθην, εἰ ᾐσθόμην ἐμαυτὸν εὐόδως προιόντα. τὸ φθάσαι τοὺς τροφέας ἐν ἀξιώματι καταστῆσαι, οὗ δὴ ἐδόκουν μοι ἐπιθυμεῖν, καὶ μὴ ἀναβαλέσθαι ἐλπίδι τοῦ με, ἐπεὶ νέοι ἔτι ἦσαν, ὕστερον αὐτὸ πράξειν. τὸ γνῶναι Ἀπολλώνιον, Ῥούστικον, Μάξιμον. τὸ φαντασθῆναι περὶ τοῦ κατὰ φύσιν βίου ἐναργῶς καὶ πολλάκις οἷός τίς ἐστιν, ὥστε, ὅσον ἐπὶ τοῖς θεοῖς καὶ ταῖς ἐκεῖθεν διαδόσεσι καὶ συλλήψεσι καὶ ἐπιπνοίαις, μηδὲν κωλύειν ἤδη κατὰ φύσιν ζῆν με, ἀπολείπεσθαι δὲ ἔτι τούτου παρὰ τὴν ἐμὴν αἰτίαν καὶ παρὰ τὸ μὴ διατηρεῖν τὰς ἐκ τῶν θεῶν ὑπομνήσεις καὶ μονονουχὶ διδασκαλίας· τὸ ἀντισχεῖν μοι τὸ σῶμα ἐπὶ τοσοῦτον ἐν τοιούτῳ βίῳ· τὸ μήτε Βενεδίκτης ἅψασθαι μήτε Θεοδότου, ἀλλὰ καὶ ὕστερον ἐν ἐρωτικοῖς πάθεσι γενόμενον ὑγιᾶναι· τὸ χαλεπήναντα πολλάκις Ῥουστίκῳ μηδὲν πλέον πρᾶξαι, ἐφ’ ᾧ ἂν μετέγνων· τὸ μέλλουσαν νέαν τελευτᾶν τὴν τεκοῦσαν ὅμως οἰκῆσαι μετ’ ἐμοῦ τὰ τελευταῖα ἔτη. τὸ ὁσάκις ἐβουλήθην ἐπικουρῆσαί τινι πενομένῳ ἢ εἰς ἄλλο τι χρῄζοντι, μηδέποτε ἀκοῦσαί με, ὅτι οὐκ ἔστι μοι χρήματα, ὅθεν γένηται, καὶ τὸ αὐτῷ ἐμοὶ χρείαν ὁμοίαν, ὡς παρ’ ἑτέρου μεταλαβεῖν, μὴ συμπεσεῖν· τὸ τὴν γυναῖκα τοιαύτην εἶναι, οὑτωσὶ μὲν πειθήνιον, οὕτω δὲ φιλόστοργον, οὕτω δὲ ἀφελῆ· τὸ ἐπιτηδείων τροφέων εἰς τὰ παιδία εὐπορῆσαι. τὸ δι’ ὀνειράτων βοηθήματα δοθῆναι ἄλλα τε καὶ ὡς μὴ πτύειν αἷμα καὶ μὴ ἰλιγγιᾶν, καὶ τούτου ἐν Καιήτῃ ὥσπερ χρήσῃ· τὸ ὅπως ἐπεθύμησα φιλοσοφίας, μὴ ἐμπεσεῖν εἴς τινα σοφιστὴν μηδὲ ἀποκαθίσαι ἐπὶ τὸ συγγράφειν ἢ συλλογισμοὺς ἀναλύειν ἢ περὶ τὰ μετεωρολογικὰ καταγίνεσθαι. πάντα γὰρ ταῦτα ʽθεῶν βοηθῶν καὶ τύχης δεῖται.ʼ Τὰ ἐν Κουάδοις πρὸς τῷ Γρανούᾳ."
       }
     ],
-    "summary": "From the gods: that I had good grandfathers, good parents, a good sister, good teachers, good household companions, relatives, and friends—almost all of them; and that I did not rush into wronging any of them, though I had a disposition from which I might, if circumstances had happened so, have done such a thing. It was the gods’ beneficence that no conjunction of circumstances arose that would have exposed me."
+    "themes": ["gratitude", "family", "teachers", "character", "fortune"]
   },
   {
     "id": "seneca-for-health-of-mind-and-body",
@@ -612,7 +619,7 @@
         "text": "Votorum tuorum veterum licet dis gratiam facias, alia de integro suscipe; roga bonam mentem, bonam valitudinem animi, deinde tunc corporis. Quidni tu ista vota saepe facias? Audacter deum roga; nihil illum de alieno rogaturus es."
       }
     ],
-    "summary": "You may release the gods from your former vows; undertake fresh ones. Ask for a good mind, for good health of soul, and then of body. Why should you not make these prayers often? Ask God boldly: you will ask him for nothing belonging to someone else."
+    "themes": ["health", "mind", "soul", "what to pray for"]
   },
   {
     "id": "seneca-the-prayer-that-asks-no-favour",
@@ -652,7 +659,7 @@
         "text": "Exaudiant di nostram quoque pro nobis vocem gratuitam."
       }
     ],
-    "summary": "May the gods also hear our disinterested prayer on our own behalf."
+    "themes": ["selflessness", "what to pray for"]
   },
   {
     "id": "seneca-for-an-honourable-life-and-the-virtue-to-endure",
@@ -692,7 +699,7 @@
         "text": "Quis tamen umquam hoc sibi optavit? Quaedam vota aperta et professa sunt, cum particulatim fiunt, quaedam latent, cum uno voto multa conprensa sunt. Tamquam opto mihi vitam honestam. Vita autem honesta actionibus variis constat; in hac est Reguli arca, Catonis scissum manu sua vulnus, Rutili exilium, calix venenatus, qui Socraten transtulit e carcere in caelum. Ita cum optavi mihi vitam honestam, et haec optavi, sine quibus interdum honesta non potest esse."
       }
     ],
-    "summary": "Yet who has ever wished this for himself? Some prayers are open and explicit when made item by item; others are hidden when many things are included in one prayer. For example, I wish for myself an honorable life. But an honorable life consists of varied actions: it includes Regulus’s chest, Cato’s wound torn open by his own hand, Rutilius’s exile, and the poisoned cup that carried Socrates from prison to heaven. Thus, when I wished for myself an honorable life, I also wished for those things without which, at times, it cannot be honorable."
+    "themes": ["virtue", "honor", "hardship", "suffering", "death", "exile"]
   },
   {
     "id": "seneca-for-life-and-health",
@@ -730,7 +737,7 @@
         "text": "Deos vitam et salutem roga; si mori placuit, hic mortis est fructus, optare desinere."
       }
     ],
-    "summary": "Ask the gods for life and health. If you have decided to die, this is death’s benefit: to stop wishing."
+    "themes": ["health", "life", "death", "desire"]
   },
   {
     "id": "athenians-athenian-prayer-for-rain",
@@ -775,7 +782,7 @@
         "text": "Εὐχὴ Ἀθηναίων· ὗσον, ὗσον, ὦ φίλε Ζεῦ, κατὰ τῆς ἀρούρας τῆς Ἀθηναίων καὶ τῶν πεδίων. ἤτοι οὐ δεῖ εὔχεσθαι ἢ οὕτως ἁπλῶς καὶ ἐλευθέρως."
       }
     ],
-    "summary": "Prayer of the Athenians: “Rain, rain, dear Zeus, on the Athenians’ plowed land and on their plains.” Either one should not pray, or one should pray so simply and freely."
+    "themes": ["simplicity", "nature", "how to pray"]
   },
   {
     "id": "demetrius-the-cynic-prayer-of-willing-surrender",
@@ -801,8 +808,8 @@
         "url": "https://www.thelatinlibrary.com/sen/sen.prov.shtml"
       },
       {
-        "label": "Stewart’s translation",
-        "url": "https://en.wikisource.org/wiki/Of_Providence"
+        "label": "Basore’s translation",
+        "url": "https://www.stoics.com/seneca_essays_book_1.html"
       }
     ],
     "notes": [
@@ -815,7 +822,7 @@
         "text": "'hoc unum' inquit 'de uobis, di inmortales, queri possum, quod non ante mihi notam uoluntatem uestram fecistis; prior enim ad ista uenissem ad quae nunc uocatus adsum. Vultis liberos sumere? uobis illos sustuli. Vultis aliquam partem corporis? sumite: non magnam rem promitto, cito totum relinquam. Vultis spiritum? quidni nullam moram faciam quo minus recipiatis quod dedisti? A uolente feretis quidquid petieritis. Quid ergo est? maluissem offerre quam tradere. Quid opus fuit auferre? accipere potuistis; sed ne nunc quidem auferetis, quia nihil eripitur nisi retinenti."
       }
     ],
-    "summary": "Immortal gods, I have one complaint against you: that you did not make your will known to me sooner. I would have come earlier to what I have now been summoned to. Do you wish to take my children? I raised them for you. Do you wish to take some part of my body? Take it; I offer no great thing, since I shall soon relinquish the whole. Do you wish my breath of life? Why not? I shall make no delay in your receiving what you gave. Whatever you ask, I shall give willingly. What, then, troubles me? I would have preferred to offer these things rather than surrender them. What need was there to take them away? You could have received it from me. Even now, you cannot take anything from me, because no one is robbed unless he resists."
+    "themes": ["surrender", "loss", "death", "children", "acceptance"]
   },
   {
     "id": "aratus-of-soli-opening-hymn-and-prayer-in-the-phaenomena",
@@ -862,7 +869,7 @@
         "text": "ἐκ Διὸς ἀρχώμεσθα, τὸν οὐδέποτʼ ἄνδρες ἐῶμεν\nἄρρητον· μεσταὶ δὲ Διὸς πᾶσαι μὲν ἀγυιαί,\nπᾶσαι δʼ ἀνθρώπων ἀγοραί, μεστὴ δὲ θάλασσα\nκαὶ λιμένες· πάντη δὲ Διὸς κεχρήμεθα πάντες.\nτοῦ γὰρ καὶ γένος εἰμέν· ὁ δʼ ἤπιος ἀνθρώποισιν\nδεξιὰ σημαίνει, λαοὺς δʼ ἐπὶ ἔργον ἐγείρει,\nμιμνῄσκων βιότοιο, λέγει δʼ ὅτε βῶλος ἀρίστη\nβουσί τε καὶ μακέλῃσι, λέγει δʼ ὅτε δεξιαὶ ὧραι\nκαὶ φυτὰ γυρῶσαι καὶ σπέρματα πάντα βαλέσθαι.\nαὐτὸς γὰρ τά γε σήματʼ ἐν οὐρανῷ ἐστήριξεν,\nἄστρα διακρίνας, ἐσκέψατο δʼ εἰς ἐνιαυτὸν\nἀστέρας οἵ κε μάλιστα τετυγμένα σημαίνοιεν\nἀνδράσιν ὡράων, ὄφρʼ ἔμπεδα πάντα φύωνται.\nτῶ μιν ἀεὶ πρῶτόν τε καὶ ὕστατον ἱλάσκονται.\nχαῖρε, πάτερ, μέγα θαῦμα, μέγʼ ἀνθρώποισιν ὄνειαρ,\nαὐτὸς καὶ προτέρη γενεή. Χαίροιτε δὲ Μοῦσαι\nμειλίχιαι μάλα πᾶσαι· ἐμοί γε μὲν ἀστέρας εἰπεῖν\nᾗ θέμις εὐχομένῳ τεκμήρατε πᾶσαν ἀοιδήν."
       }
     ],
-    "summary": "Let us begin from Zeus, whom we mortals never leave unspoken. All streets and all human marketplaces are full of Zeus; the sea and harbors are full of him. Everywhere we all have need of Zeus. For we are also his offspring. Kindly toward human beings, he gives favorable signs and awakens people to work, reminding them of their livelihood. He tells when the soil is best for ox and mattock, and when the seasons are favorable for planting trees and casting every seed. He himself fixed the signs in heaven, distinguished the constellations, and devised which stars should chiefly mark the seasons, so that everything might grow unfailingly. Therefore people honor him first and last."
+    "themes": ["nature", "stars", "seasons", "providence", "work"]
   },
   {
     "id": "persius-the-offering-appropriate-to-prayer",
@@ -910,7 +917,7 @@
         "text": "Quin damus id superis, de magna quod dare lance\nnon possit magni Messalae lippa propago:\ncompositum ius fasque animo sanctosque recessus\nmentis et incoctum generoso pectus honesto.\nHaec cedo ut admoveam templis, et farre litabo."
       }
     ],
-    "summary": "Why do we not give the gods what the bleary offspring of great Messalla could not give from a great platter: justice and divine law composed within the soul; the mind’s holy inner recesses; and a heart steeped in noble honor? Grant that I may bring these to the temples, and I shall sacrifice successfully with meal."
+    "themes": ["sacrifice", "justice", "virtue", "sincerity", "worship"]
   },
   {
     "id": "euripides-acceptance-of-necessity",
@@ -957,7 +964,7 @@
         "text": "ὅστις δ᾽ ἀνάγκῃ συγκεχώρηκεν καλῶς, σοφὸς παρ᾽ ἡμῖν, καὶ τὰ θεῖ᾽ ἐπίσταται."
       }
     ],
-    "summary": "Whoever has yielded well to necessity is considered wise among us and understands divine things."
+    "themes": ["necessity", "fate", "acceptance", "wisdom"]
   },
   {
     "id": "socrates-acceptance-of-the-gods-will",
@@ -983,8 +990,8 @@
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg002/tlg0557.tlg002.perseus-grc2.xml"
       },
       {
-        "label": "Higginson’s translation",
-        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg002/tlg0557.tlg002.perseus-eng4.xml"
+        "label": "Oldfather’s translation",
+        "url": "https://archive.org/details/epictetusdiscour02epicuoft"
       }
     ],
     "notes": [
@@ -997,6 +1004,6 @@
         "text": "ἀλλʼ, ὦ Κρίτων, εἰ ταύτῃ τοῖς θεοῖς φίλον, ταύτῃ γενέσθω.\n\nἐμὲ δὲ Ἄνυτος καὶ Μέλιτος ἀποκτεῖναι μὲν δύνανται, βλάψαι δὲ οὔ."
       }
     ],
-    "summary": "But, Crito, if this way is pleasing to the gods, let it happen this way."
+    "themes": ["death", "acceptance", "fate", "courage", "injustice"]
   }
 ]

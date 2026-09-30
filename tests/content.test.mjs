@@ -12,6 +12,7 @@ test("each passage has a complete original, a precise citation, and safe source 
     assert.ok(p.reference && p.original && p.literal);
     assert.ok(!p.original.includes("…"), p.id + " has an abbreviated original");
     assert.ok(p.sources.length > 0);
+    assert.ok(p.themes.length > 0, p.id + " has no search themes");
     for (const source of p.sources)
       assert.equal(new URL(source.url).protocol, "https:");
   }
@@ -30,16 +31,30 @@ test("the lightweight catalogue stays synchronized with published routes", () =>
   );
   assert.deepEqual(
     catalog,
-    prayers.map(({ id, author, title, category, reference }) => ({
+    prayers.map(({ id, author, title, category, reference, themes }) => ({
       id,
       author,
       title,
       category,
       reference,
+      themes,
     })),
   );
   assert.equal(
     prayers.reduce((count, p) => count + p.editions.length, 0),
     40,
   );
+});
+test("translation sources name an edition the reader displays", () => {
+  for (const p of prayers)
+    for (const source of p.sources) {
+      const translator = source.label.match(/(\S+)’s (?:edition|translation)/);
+      if (!translator) continue;
+      assert.ok(
+        p.editions.some(
+          (e) => e.name.includes(translator[1]) && e.url === source.url,
+        ),
+        `${p.id}: “${source.label}” does not link a displayed edition`,
+      );
+    }
 });

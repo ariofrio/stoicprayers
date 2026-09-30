@@ -1,19 +1,13 @@
 import { Link } from "react-router";
+import { pageMeta } from "../meta";
 
 export function meta() {
-  return [
-    { title: "About the texts — Stoic prayers" },
-    {
-      name: "description",
-      content:
-        "Scope, source verification, and translation method for the Stoic prayers collection.",
-    },
-    {
-      tagName: "link",
-      rel: "canonical",
-      href: "https://stoicprayers.org/about",
-    },
-  ];
+  return pageMeta({
+    title: "About the texts — Stoic prayers",
+    description:
+      "Scope, source verification, and translation method for the Stoic prayers collection.",
+    path: "/about",
+  });
 }
 
 export default function About() {
