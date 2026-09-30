@@ -27,6 +27,7 @@
       {
         "name": "E. H. Blakeney",
         "year": "1921",
+        "default": true,
         "url": "https://en.wikisource.org/wiki/The_Hymn_of_Cleanthes",
         "text": "Most glorious of Immortals, mighty God,\nInvoked by many a name, O sovran King\nOf universal Nature, piloting\nThis world in harmony with Law,—all hail!\nThee it is meet that mortals should invoke,\nFor we Thine offspring are, and sole of all\nCreated things that live and move on earth\nReceive from Thee the image of the One.\nTherefore I praise Thee, and shall hymn Thy power\nUnceasingly. Thee the wide world obeys,\nAs onward ever in its course it rolls\nWhere’er Thou guidest, and rejoices still\nBeneath Thy sway: so strong a minister\nIs held by Thine unconquerable hands,—\nThat two-edged thunderbolt of living fire\nThat never fails. Under its dreadful blow\nAll Nature reels; therewith Thou dost direct\nThe Universal Reason which, commixt\nWith all the greater and the lesser lights,\nMoves thro’ the Universe. How great Thou art,\nThe Lord supreme for ever and for aye!\nNo work is wrought apart from Thee, O God,\nOr in the world, or in the heaven above,\nOr on the deep, save only what is done\nBy sinners in their folly. Nay, Thou canst\nMake the rough smooth, bring wondrous order forth\nFrom chaos; in Thy sight unloveliness\nSeems beautiful; for so Thou hast fitted things\nTogether, good and evil, that there reigns\nOne everlasting Reason in them all.\nThe wicked heed not this, but suffer it\nTo slip, to their undoing; these are they\nWho, yearning ever to secure the good,\nMark not nor hear the law of God, by wise\nObedience unto which they might attain\nA nobler life, with Reason harmonized.\nBut now, unbid, they pass on divers paths\nEach his own way, yet knowing not the truth,—\nSome in unlovely striving for renown,\nSome bent on lawless gains, on pleasure some,\nWorking their own undoings self-deceived.\nO Thou most bounteous God that sittest throned\nIn clouds, the Lord of lightning, save mankind\nFrom grievous ignorance! Oh, scatter it\nFar from their souls, and grant them to achieve\nTrue knowledge, on whose might Thou dost rely\nTo govern all the world in righteousness;\nThat so, being honoured, we may Thee requite\nWith honour, chanting without pause Thy deeds,\nAs all men should: since greater guerdon ne’er\nBefalls or man or god than evermore\nDuly to praise the Universal Law.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -70,6 +71,7 @@
       {
         "name": "Thomas Lodge — Seneca's Latin adaptation",
         "year": "1614",
+        "original": "la",
         "url": "https://archive.org/details/bim_early-english-books-1475-1640_the-workes-of-lucius-ann_seneca-lucius-annus_1614",
         "text": "O soueraiene Father, and eternall Lord | of higheit heanens, condutt me at thy pleasure, | Vnto thy powerfull will I slraight accord, | Make me not will, yet mourning without measure, | lie waite pon thee, andin being bad Saffer all that, which if my minde were init, | 1 might endure with al! the strength 1 had, | Whither thou wilt, O God, 1 will and must : | I flie delayes, both heart and feete are willing, | The Fateseondutt, the forward draw the wiline.",
         "kind": "translation",
@@ -78,6 +80,8 @@
       {
         "name": "Thomas Wentworth Higginson — Greek quotation",
         "year": "1890",
+        "original": "grc",
+        "default": true,
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg002/tlg0557.tlg002.perseus-eng4.xml",
         "text": "Conduct me, Zeus, and thou, O Destiny,\nWherever your decrees have fixed my lot.\nI follow cheerfully; and, did I not,\nWicked and wretched, I must follow still.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -85,6 +89,7 @@
       {
         "name": "Richard M. Gummere — Seneca's Latin adaptation",
         "year": "1925",
+        "original": "la",
         "url": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_107",
         "text": "Lead me, O Master of the lofty heavens,\nMy Father, whithersoever thou shalt wish.\nI shall not falter, but obey with speed.\nAnd though I would not, I shall go, and suffer,\nIn sin and sorrow what I might have done\nIn noble virtue. Aye, the willing soul\nFate leads, but the unwilling drags along.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -148,6 +153,7 @@
       {
         "name": "W. A. Oldfather",
         "year": "1925",
+        "default": true,
         "url": "https://archive.org/details/epictetusdiscour01epicuoft",
         "text": "Bring now, O Zeus, what difficulty Thou wilt; for I have an equipment given to me by Thee, and resources wherewith to distinguish myself by making use of the things that come to pass.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -190,6 +196,7 @@
       {
         "name": "Thomas Wentworth Higginson",
         "year": "1890",
+        "default": true,
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg001/tlg0557.tlg001.perseus-eng4.xml",
         "text": "Are these the only works of Providence with regard to us? And what speech can fitly celebrate their praise? For, if we had any understanding, ought we not, both in public and in private, incessantly to sing and praise the Deity, and rehearse his benefits? Ought we not, whether we dig or plough or eat, to sing this hymn to God,—Great is God, who has supplied us with these instruments to till the ground; great is God, who has given us hands and organs of digestion; who has given us to grow insensibly, to breathe in sleep? These things we ought forever to celebrate; and to make it the theme of the greatest and divinest hymn, that he has given us the power to appreciate these gifts, and to use them well. But because the most of you are blind and insensible, there must be some one to fill this station, and lead, in behalf of all men, the hymn to God; for what else can I do, a lame old man, but sing hymns to God? Were I a nightingale, I would act the part of a nightingale; were I a swan, the part of a swan; but since I am a reasonable creature, it is my duty to praise God. This is my business; I do it; nor will I ever desert this post, so long as it is permitted me; and I call on you to join in the same song.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -228,6 +235,7 @@
       {
         "name": "Thomas Wentworth Higginson",
         "year": "1890",
+        "default": true,
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg001/tlg0557.tlg001.perseus-eng4.xml",
         "text": "Make use of me for the future as Thou wilt. I am of the same mind; I am one with Thee. I refuse nothing which seems good to Thee. Lead me whither Thou wilt. Clothe me in whatever dress Thou wilt. Is it Thy will that I should be in a public or a private condition; dwell here, or be banished; be poor, or rich? Under all these circumstances I will testify unto Thee before men. I will explain the nature of every dispensation.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -268,6 +276,7 @@
       {
         "name": "Thomas Wentworth Higginson",
         "year": "1890",
+        "default": true,
         "text": "For my own part, I would be found engaged in nothing but in the regulation of my own Will; how to render it undisturbed, unrestrained, uncompelled, free. I would be found studying this, that I may be able to say to God, “Have I transgressed thy commands? Have I perverted the powers, the senses, the instincts which thou hast given me? Have I ever accused thee, or censured thy dispensations? I have been ill, because it was thy pleasure, like others; but I willingly. I have been poor, it being thy will; but with joy. I have not been in power, because it was not thy will; and power I have never desired. Hast thou ever seen me saddened because of this? Have I not always approached thee with a cheerful countenance, prepared to execute thy commands and the indications of thy will? Is it thy pleasure that I should depart from this assembly? I depart. I give thee all thanks that thou hast thought me worthy to have a share in it with thee; to behold thy works, and to join with thee in comprehending thy administration.”",
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg001/tlg0557.tlg001.perseus-eng4.xml",
         "verification": "Compared with Perseus; corrected its OCR “snare” to “share” and omitted context outside 3.5.7–10."
@@ -306,6 +315,7 @@
       {
         "name": "Thomas Wentworth Higginson",
         "year": "1890",
+        "default": true,
         "text": "Dost thou wish me still to live? Let me live free and noble, as thou desirest; for thou hast made me incapable of restraint in what is my own. But hast thou no further use for me? Farewell! I have stayed thus long through thee alone, and no other; and now I depart in obedience to thee.\n\nHow do you depart?\n\nStill as thou wilt; as one free, as thy servant, as one sensible of thy commands and thy prohibitions. But, while I am employed in thy service, what wouldst thou have me to be,—a prince, or a private man; a senator, or a plebeian; a soldier, or a general; a preceptor, or a master of a family? Whatever post or rank thou shalt assign me, like Socrates, I will die a thousand times rather than desert it. Where wouldst thou have me to be,—at Rome, or at Athens; at Thebes, or at Gyaros? Only remember me there. If thou shalt send me where men cannot live conformably to nature, I will not depart unbidden, but upon a recall as it were sounded by thee. Even then I do not desert thee; Heaven forbid! but I perceive that thou hast no use for me. If a life conformable to nature be granted, I will seek no other place but that in which I am, nor any other company but those with whom I dwell.",
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg001/tlg0557.tlg001.perseus-eng4.xml",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -346,6 +356,7 @@
       {
         "name": "Thomas Wentworth Higginson",
         "year": "1890",
+        "default": true,
         "text": "The opportunities which I have received from thee of comprehending and obeying thy administration, I have not neglected. As far as in me lay, I have not dishonored thee. See how I have used my perceptions; how my convictions. Have I at any time found fault with thee? Have I been discontented at thy dispensations, or wished them otherwise? Have I transgressed the relations of life? I thank thee that thou hast brought me into being. I am satisfied with the time that I have enjoyed the things which thou hast given me. Receive them back again, and distribute them as thou wilt; for they were all thine, and thou gavest them to me.",
         "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0557/tlg001/tlg0557.tlg001.perseus-eng4.xml",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -391,6 +402,7 @@
       {
         "name": "George W. Chrystal",
         "year": "1902",
+        "default": true,
         "url": "https://www.gutenberg.org/ebooks/55317",
         "text": "Either the Gods have power or they have none. If they have no power, why do you pray? If they have power, why do you not choose to pray to them for power neither to fear, nor to desire, nor to be grieved over any of these external things, rather than for their presence or their absence? Surely, if the Gods can aid man at all, they can aid him in this. But perhaps you will say ‘the Gods have put this in my own power.’ Then is it not better to use that which is in your own power and preserve your liberty, than to set your heart on what is beyond your power and become an abject slave? And who has told you that the Gods aid us not in these things also which are in our power? Begin to pray about them and you will see. One man prays: ‘May I possess that woman!’ Do you pray: ‘May I have no wish to possess her!’ Another prays: ‘May I be delivered from so and so!’ Pray you: ‘May I not need to be delivered from him!’ A third cries: ‘May I not lose my child!’ Let your prayer be: ‘May I not fear to lose him!’ In fine, turn your prayers this way, and observe what comes of it.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -436,6 +448,7 @@
       {
         "name": "George Long",
         "year": "1862",
+        "default": true,
         "url": "https://classics.mit.edu/Antoninus/meditations.4.four.html",
         "text": "Everything harmonizes with me, which is harmonious to thee, O Universe. Nothing for me is too early nor too late, which is in due time for thee. Everything is fruit to me which thy seasons bring, O Nature: from thee are all things, in thee are all things, to thee all things return. The poet says, Dear city of Cecrops; and wilt not thou say, Dear city of Zeus?",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -481,6 +494,7 @@
       {
         "name": "George Long",
         "year": "1862",
+        "default": true,
         "url": "https://classics.mit.edu/Antoninus/meditations.10.ten.html",
         "text": "“The earth loves the shower;” and “the solemn aether loves:” and the universe loves to make whatever is about to be. I say then to the universe, that I love as thou lovest. And is not this too said, that “this or that loves [is wont] to be produced?”",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -557,6 +571,7 @@
       {
         "name": "C. R. Haines",
         "year": "1916",
+        "default": true,
         "url": "https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_1",
         "text": "17. From the Gods, to have good grandfathers, good parents, a good sister, good teachers, good companions, kinsmen, friends—nearly all of them; and that I fell into no trespass against any of them, and yet I had a disposition that way inclined, such as might have led me into something of the sort, had it so chanced; but by the grace of God there was no such coincidence of circumstances as was likely to put me to the test. And that I was not brought up any longer with my grandfather's concubine, and that I kept unstained the flower of my youth; and that I did not make trial of my manhood before the due time, but even postponed it. That I was subordinated to a ruler and a father capable of ridding me of all conceit, and of bringing me to recognize that it is possible to live in a Court and yet do without body-guards and gorgeous garments and linkmen and statues and the like pomp; and that it is in such a man's power to reduce himself very nearly to the condition of a private individual and yet not on this account to be more paltry or more remiss in dealing with what the interests of the state require to be done in imperial fashion. That it was my lot to have such a brother, capable by his character of stimulating me to watchful care over myself, and at the same time delighting me by his deference and affection: that my children have not been devoid of intelligence nor physically deformed. That I did not make more progress in rhetoric and poetry and my other studies, in which I should perhaps have been engrossed, had I felt myself making good way in them. That I lost no time in promoting my tutors to such posts of honour as they seemed to desire, and that I did not put them off with the hope that I would do this later on since they were still young. That I got to know Apollonius, Rusticus, Maximus. That I had clear and frequent conceptions as to the true meaning of a life according to Nature, so that as far as the Gods were concerned and their blessings and assistance and intention, there was nothing to prevent me from beginning at once to live in accordance with Nature, though I still come short of this ideal by my own fault, and by not attending to the reminders, nay, almost the instructions, of the Gods. That my body holds out so long in such a life as mine; that I did not touch Benedicta or Theodotus, but that even afterwards, when I did give way to amatory passions, I was cured of them; that, though often offended with Rusticus, I never went so far as to do anything for which I should have been sorry; that my mother, though she was to die young, yet spent her last years with me. That as often as I had the inclination to help anyone, who was in pecuniary distress or needing any other assistance, I was never told that there was no money available for the purpose; and that I was never under any similar need of accepting help from another. That I have been blessed with a wife so docile, so affectionate, so unaffected; that I had no lack of suitable tutors for my children. That by the agency of dreams I was given antidotes both of other kinds and against the spitting of blood and vertigo; and there is that response also at Caieta, \"as thou shalt use it.\" And that, when I had set my heart on philosophy, I did not fall into the hands of a sophist, nor sat down at the author's desk, or became a solver of syllogisms, nor busied myself with physical phenomena. For all the above the Gods as helpers and good fortune need.",
         "kind": "translation",
@@ -596,6 +611,7 @@
       {
         "name": "Richard M. Gummere",
         "year": "1917",
+        "default": true,
         "url": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_10",
         "text": "As for your former prayers, you may dispense the gods from answering them; offer new prayers; pray for a sound mind and for good health, first of soul and then of body. And of course you should offer those prayers frequently. Call boldly upon God; you will not be asking him for that which belongs to another.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -634,6 +650,7 @@
       {
         "name": "Richard M. Gummere",
         "year": "1920",
+        "default": true,
         "text": "And may the gods give ear to our cry also, uttered in our own behalf,—one which asks no favours!",
         "url": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_60",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -674,6 +691,7 @@
       {
         "name": "Richard M. Gummere",
         "year": "1920",
+        "default": true,
         "text": "You ask me whether every good is desirable. You say: “If it is a good to be brave under torture, to go to the stake with a stout heart, to endure illness with resignation, it follows that these things are desirable. But I do not see that any of them is worth praying for. At any rate I have as yet known of no man who has paid a vow by reason of having been cut to pieces by the rod, or twisted out of shape by the gout, or made taller by the rack.”\n\nMy dear Lucilius, you must distinguish between these cases; you will then comprehend that there is something in them that is to be desired. I should prefer to be free from torture; but if the time comes when it must be endured, I shall desire that I may conduct myself therein with bravery, honour, and courage. Of course I prefer that war should not occur; but if war does occur, I shall desire that I may nobly endure the wounds, the starvation, and all that the exigency of war brings. Nor am I so mad as to crave illness; but if I must suffer illness, I shall desire that I may do nothing which shows lack of restraint, and nothing that is unmanly. The conclusion is, not that hardships are desirable, but that virtue is desirable, which enables us patiently to endure hardships.\n\nCertain of our school think that, of all such qualities, a stout endurance is not desirable,—though not to be deprecated either—because we ought to seek by prayer only the good which is unalloyed, peaceful, and beyond the reach of trouble. Personally, I do not agree with them. And why? First, because it is impossible for anything to be good without being also desirable. Because, again, if virtue is desirable, and if nothing that is good lacks virtue, then everything good is desirable. And, lastly, because a brave endurance even under torture is desirable.\n\nAt this point I ask you: Is not bravery desirable? And yet bravery despises and challenges danger. The most beautiful and most admirable part of bravery is that it does not shrink from the stake, advances to meet wounds, and sometimes does not even avoid the spear, but meets it with opposing breast. If bravery is desirable, so is patient endurance of torture; for this is a part of bravery. Only sift these things, as I have suggested; then there will be nothing which can lead you astray. For it is not mere endurance of torture, but brave endurance, that is desirable. I therefore desire that “brave” endurance; and this is virtue.\n\n“But,” you say, “who ever desired such a thing for himself?” Some prayers are open and outspoken, when the requests are offered specifically; other prayers are indirectly expressed, when they include many requests under one title. For example, I desire a life of honour. Now a life of honour includes various kinds of conduct; it may include the chest in which Regulus was confined, or the wound of Cato which was torn open by Cato’s own hand, or the exile of Rutilius, or the cup of poison which removed Socrates from gaol to heaven. Accordingly, in praying for a life of honour, I have prayed also for those things without which, on some occasions, life cannot be honourable.",
         "url": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_67",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -714,6 +732,7 @@
       {
         "name": "Richard M. Gummere",
         "year": "1925",
+        "default": true,
         "text": "Ask the gods for life and health; if thou art resolved to die, death’s reward is to have done with prayers.",
         "url": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_117",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -759,6 +778,7 @@
       {
         "name": "George Long",
         "year": "1862",
+        "default": true,
         "url": "https://classics.mit.edu/Antoninus/meditations.5.five.html",
         "text": "A prayer of the Athenians: Rain, rain, O dear Zeus, down on the ploughed fields of the Athenians and on the plains.—In truth we ought not to pray at all, or we ought to pray in this simple and noble fashion.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -797,6 +817,7 @@
       {
         "name": "J. W. Basore",
         "year": "1928",
+        "default": true,
         "text": "\"Immortal gods,\" he said, \"I have this one complaint to make against you, that you did not earlier make known your will to me; for I should have reached the sooner that condition in which, after being summoned, I now am. Do you wish to take my children? - it was for you that I fathered them. Do you wish to take some member of my body? - take it; no great thing am I offering you; very soon I shall leave the whole. Do you wish to take my life? - why not? I shall make no protest against your taking back what once you gave. With my free consent you shall have whatever you may ask of me. What, then, is my trouble? I should have preferred to offer than to relinquish. What was the need to take by force? You might have had it as a gift. Yet even now you will not take it by force, because nothing can be wrenched away from a man unless he withholds it.”",
         "url": "https://www.stoics.com/seneca_essays_book_1.html",
         "verification": "Transcribed from the linked Basore edition, including the narrator’s “he said”."
@@ -844,6 +865,7 @@
       {
         "name": "G. R. Mair",
         "year": "1921",
+        "default": true,
         "url": "https://www.theoi.com/Text/AratusPhaenomena.html",
         "text": "From Zeus let us begin; him do we mortals never leave unnamed; full of Zeus are all the streets and all the market-places of men; full is the sea and the havens thereof; always we all have need of Zeus. For we are also his offspring; and he in his kindness unto men giveth favourable signs and wakeneth the people to work, reminding them of livelihood. He tells what time the soil is best for the labour of the ox and for the mattock, and what time the seasons are favourable both for the planting of trees and for casting all manner of seeds. For himself it was who set the signs in heaven, and marked out the constellations, and for the year devised what stars chiefly should give to men right signs of the seasons, to the end that all things might grow unfailingly. Wherefore him do men ever worship first and last. Hail, O Father, mighty marvel, mighty blessing unto men. Hail to thee and to the Elder Race! Hail, ye Muses, right kindly, every one! But for me, too, in answer to my prayer direct all my lay, even as is meet, to tell the stars.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -892,6 +914,7 @@
       {
         "name": "G. G. Ramsay",
         "year": "1918",
+        "default": true,
         "text": "O Souls bowed down to earth, and void of all heavenly thoughts! What avails it to bring our ideas into the temples, and to infer from this sinful flesh of ours what is pleasing to the gods? It is the flesh that has spoilt our oil by mingling it with casia, and misused Tyrian purple for the soaking of Calabrian fleeces; it is this that has bidden us pluck the pearl from the shell, and tear out the veins of shining ore from the native clay.\n\nThe flesh indeed sins, it sins, and yet it gets profit from its sinning. But tell me this, ye priests, what avails gold inside the sanctuary? Just as much as the dolls which maidens dedicate to Venus! Nay rather let us offer to the gods what the blear-eyed progeny of the great Messala cannot give out of his lordly salver;—a heart rightly attuned towards God and man; a mind pure in its inner depths, and a soul steeped in nobleness and honour.\n\nGive me these to offer in the temples, and a handful of corn shall win my prayer for me!",
         "url": "https://en.wikisource.org/wiki/Juvenal_and_Persius/The_Satires_of_Persius/Satire_2",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -939,6 +962,7 @@
       {
         "name": "W. A. Oldfather",
         "year": "1928",
+        "default": true,
         "url": "https://archive.org/details/epictetusdiscour02epicuoft",
         "text": "Whoso has rightly with necessity complied,\nWe count him wise, and skilled in things divine.",
         "verification": "Text matched to linked transcription; typography normalized."
@@ -979,6 +1003,7 @@
       {
         "name": "W. A. Oldfather",
         "year": "1928",
+        "default": true,
         "url": "https://archive.org/details/epictetusdiscour02epicuoft",
         "text": "Well, O Crito, if so it is pleasing to the gods, so let it be. Anytus and Meletus can kill me, but they cannot hurt me.",
         "verification": "Text matched to linked transcription; typography normalized."
