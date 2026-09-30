@@ -69,19 +69,20 @@ export default function About() {
       </p>
       <h2>Reading across editions</h2>
       <p>
-        Each passage opens with a historical English translation. Use the links
-        above the text to read the original, a literal English draft, or the
-        source notes. Without JavaScript, all three texts appear on the page and
-        these links jump to their sections.
+        Each passage opens with a historical English translation. Choose
+        “Literal” or “Original” above the text to read a literal English draft
+        or the ancient words instead; “Sources &amp; notes” beside the reference
+        leads to the source notes. Without JavaScript, all three texts appear on
+        the page and these links jump to their sections.
       </p>
       <p>
         Where more than one historical translation is available, choose an
-        edition above the English text. “Compare texts” brings the original,
-        literal draft, and historical translation together. “Add translation”
-        includes another historical edition. Texts appear side by side when
-        there is room, and stack on smaller screens. Translations may include
-        context outside the selected ancient words; the lines are not aligned
-        word for word.
+        edition above the English text. “Compare” brings the original, literal
+        draft, and historical translation together. “Add translation” includes
+        another historical edition. Texts appear side by side when there is
+        room, and stack on smaller screens. Translations may include context
+        outside the selected ancient words; the lines are not aligned word for
+        word.
       </p>
       <h2>Sources and corrections</h2>
       <p>

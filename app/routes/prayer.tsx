@@ -1,5 +1,5 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
-import { Link, useLocation } from "react-router";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import type { Route } from "./+types/prayer";
 import { catalog, type Prayer } from "../content/catalog";
 import { getPrayer } from "../content/prayers.server";
@@ -35,6 +35,10 @@ function subscribeToHash(listener: () => void) {
   };
 }
 
+function subscribeToNothing() {
+  return () => {};
+}
+
 function Reader({ prayer }: { prayer: Prayer }) {
   const [edition, setEdition] = useState(() =>
     prayer.editions.reduce(
@@ -44,22 +48,30 @@ function Reader({ prayer }: { prayer: Prayer }) {
     ),
   );
   const [second, setSecond] = useState<number | null>(null);
-  const [compare, setCompare] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const menu = useRef<HTMLDetailsElement>(null);
   const hash = useSyncExternalStore(
     subscribeToHash,
     () => window.location.hash,
     () => "",
   );
+  const enhanced = useSyncExternalStore(
+    subscribeToNothing,
+    () => true,
+    () => false,
+  );
+  const lastView = useRef(hash);
+  if (hash !== "#sources") lastView.current = hash;
+  const view = lastView.current.slice(1);
   const availableSections = [
     "original",
     "modern",
     "historical",
     ...(second !== null ? ["additional"] : []),
   ];
-  const section = availableSections.includes(hash.slice(1))
-    ? hash.slice(1)
-    : "historical";
+  const section = availableSections.includes(view) ? view : "historical";
+  const compare = view === "compare" || section === "additional";
   useEffect(() => {
     if (hash === `#${section}` || hash === "#sources") {
       const target = document.getElementById(hash.slice(1));
@@ -83,6 +95,20 @@ function Reader({ prayer }: { prayer: Prayer }) {
     } catch {
       setCopyMessage("Copy this page’s address from your browser.");
     }
+  }
+  function closeMenu() {
+    if (!menu.current?.open) return;
+    menu.current.open = false;
+    menu.current.querySelector("summary")?.focus();
+  }
+  function removeTranslation() {
+    setSecond(null);
+    if (section === "additional")
+      navigate("#compare", {
+        replace: true,
+        state: location.state,
+        preventScrollReset: true,
+      });
   }
   function translationColumn(value: number, extra = false) {
     const e = prayer.editions[value];
@@ -141,7 +167,7 @@ function Reader({ prayer }: { prayer: Prayer }) {
           {extra && (
             <button
               className="text-button remove-translation"
-              onClick={() => setSecond(null)}
+              onClick={removeTranslation}
             >
               Remove translation
             </button>
@@ -165,28 +191,75 @@ function Reader({ prayer }: { prayer: Prayer }) {
           {prayer.category} <span aria-hidden="true">/</span> {prayer.author}
         </p>
         <h1>{prayer.title}</h1>
-        <p className="source-reference">{prayer.reference}</p>
+        <p className="source-reference">
+          {prayer.reference}
+          <span className="sources-link">
+            <span aria-hidden="true"> · </span>
+            <Link
+              to="#sources"
+              state={location.state}
+              preventScrollReset
+              aria-current={hash === "#sources" ? "location" : undefined}
+            >
+              Sources &amp; notes
+            </Link>
+          </span>
+        </p>
       </section>
-      <div className="reader-tools js-only">
-        <div className="view-switch" role="group" aria-label="Reading view">
-          <button aria-pressed={!compare} onClick={() => setCompare(false)}>
-            Read
-          </button>
-          <button aria-pressed={compare} onClick={() => setCompare(true)}>
-            Compare texts
-          </button>
-        </div>
-        <div className="reader-actions">
-          {compare && prayer.editions.length > 1 && second === null && (
-            <button onClick={() => setSecond(edition === 0 ? 1 : 0)}>
-              Add translation
+      <div className="reader-bar">
+        <nav className="view-switch" aria-label="Reading view">
+          {[
+            ["historical", "Historical"],
+            ["modern", "Literal"],
+            ["original", "Original"],
+            ["compare", "Compare"],
+          ].map(([id, label]) => (
+            <Link
+              key={id}
+              to={`#${id}`}
+              state={location.state}
+              preventScrollReset
+              className={id === "compare" ? "js-only" : undefined}
+              aria-current={
+                enhanced && (compare ? id === "compare" : section === id)
+                  ? "location"
+                  : undefined
+              }
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <details
+          ref={menu}
+          className="reader-menu js-only"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") closeMenu();
+          }}
+          onToggle={(event) => {
+            if (!event.currentTarget.open)
+              setCopyMessage((message) =>
+                message === "Link copied" ? "" : message,
+              );
+          }}
+        >
+          <summary aria-label="Page actions" title="Page actions">
+            <span aria-hidden="true">⋯</span>
+          </summary>
+          <div className="reader-menu-items">
+            <button onClick={copyLink}>
+              {copyMessage === "Link copied" ? "Link copied" : "Copy link"}
             </button>
-          )}
-          <button onClick={copyLink}>
-            {copyMessage === "Link copied" ? "Link copied" : "Copy link"}
-          </button>
-          <button onClick={() => window.print()}>Print</button>
-        </div>
+            <button
+              onClick={() => {
+                closeMenu();
+                window.print();
+              }}
+            >
+              Print
+            </button>
+          </div>
+        </details>
         <span className="sr-only" role="status">
           {copyMessage}
         </span>
@@ -194,41 +267,18 @@ function Reader({ prayer }: { prayer: Prayer }) {
       {copyMessage && copyMessage !== "Link copied" && (
         <p className="copy-status">{copyMessage}</p>
       )}
-      <nav className="section-links" aria-label="Passage sections">
-        {[
-          ["historical", "Historical translation"],
-          ["modern", "Literal draft"],
-          ["original", "Original text"],
-          ...(second !== null
-            ? [["additional", "Additional translation"]]
-            : []),
-        ].map(([id, label]) => (
-          <Link
-            key={id}
-            to={`#${id}`}
-            state={location.state}
-            preventScrollReset
-            aria-current={
-              hash !== "#sources" && section === id ? "location" : undefined
-            }
-          >
-            {label}
-          </Link>
-        ))}
-        <Link
-          to="#sources"
-          state={location.state}
-          preventScrollReset
-          aria-current={hash === "#sources" ? "location" : undefined}
-        >
-          Sources &amp; notes
-        </Link>
-      </nav>
       {compare && (
-        <p className="comparison-note">
-          Compare whole passages; lines are not aligned word for word. Texts
-          stack on smaller screens.
-        </p>
+        <div className="comparison-tools">
+          <p className="comparison-note">
+            Compare whole passages; lines are not aligned word for word. Texts
+            stack on smaller screens.
+          </p>
+          {prayer.editions.length > 1 && second === null && (
+            <button onClick={() => setSecond(edition === 0 ? 1 : 0)}>
+              Add translation
+            </button>
+          )}
+        </div>
       )}
       <div
         className={`reading-grid${compare ? " compare-view" : " read-view"}${second !== null ? " four-columns" : ""}`}
