@@ -402,7 +402,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
+  padding: 14px 0;
   font: 14px/1.5 var(--utility);
   color: var(--muted);
 }
@@ -411,11 +411,11 @@ h3 {
   text-decoration: none;
 }
 .reader-intro {
-  padding: 8px 0 20px;
+  padding: 16px 0 28px;
   max-width: 940px;
 }
 .reader-intro h1 {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .reader-intro .eyebrow span {
   margin: 0 8px;
@@ -444,8 +444,8 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 8px 0;
-  margin-bottom: 16px;
+  padding: 12px 0;
+  margin-bottom: 24px;
 }
 .view-switch {
   display: flex;
@@ -522,7 +522,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 4px 12px;
-  margin: -4px 0 16px;
+  margin: -8px 0 20px;
 }
 .comparison-note {
   margin: 0;
@@ -863,22 +863,25 @@ h3 {
     gap: 8px 24px;
   }
   .reader-breadcrumb {
-    padding: 2px 0;
+    padding: 6px 0;
   }
   .reader-intro {
-    padding: 0 0 14px;
+    padding: 4px 0 20px;
   }
   .reader-intro .eyebrow {
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
   .reader-intro h1 {
-    font-size: 30px;
-    margin-bottom: 6px;
+    font-size: 32px;
+    margin-bottom: 10px;
   }
   .reader-bar {
     gap: 4px;
-    padding: 6px 0;
-    margin-bottom: 12px;
+    padding: 8px 0;
+    margin-bottom: 16px;
+  }
+  .comparison-tools {
+    margin: -4px 0 16px;
   }
   .view-switch a {
     padding: 0 10px;
@@ -898,12 +901,12 @@ h3 {
   }
   .text-column > header,
   .compare-view .text-column > header {
-    padding: 16px 20px 14px;
+    padding: 20px 20px 16px;
     min-height: 0;
   }
   .text-column h2 {
-    font-size: 21px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
   .passage-text,
   .compare-view .passage-text {
