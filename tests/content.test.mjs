@@ -58,3 +58,14 @@ test("translation sources name an edition the reader displays", () => {
       );
     }
 });
+test("historical translations stay within their passage's range", () => {
+  const words = (text) => text.split(/\s+/).filter(Boolean).length;
+  for (const p of prayers)
+    for (const e of p.editions) {
+      const ratio = words(e.text) / words(p.literal);
+      assert.ok(
+        ratio >= 0.25 && ratio <= 2,
+        `${p.id}: ${e.name} is ${ratio.toFixed(2)}× the literal English`,
+      );
+    }
+});
